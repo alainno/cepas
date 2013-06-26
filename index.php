@@ -8,7 +8,7 @@ get_header();
 			</p>
 		</div>
 		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide2.jpg">
-			<p class="ttu">Artesanía Ecológica
+			<p class="ttu">Artesanía Ecológica APPAM
 			</p>
 		</div>
 		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide3.jpg">
