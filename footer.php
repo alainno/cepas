@@ -26,34 +26,34 @@
 		<div class="left"><strong>Enlaces Rápidos</strong>
 			<div class="clearer">
                 <ul class="left">
-					<li><a href="#">Aceca de...</a>
+					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Inicio</a>
 					</li>
-					<li><a href="#">Contáctenos</a>
+					<li><a href="<?php echo get_page_link(PAGE_GIES); ?>">GIES Melgar</a>
 					</li>
-					<li><a href="#">Noticias</a>
+					<li><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>">T'ikariy</a>
 					</li>
-					<li><a href="#">Galería Multimedia</a>
+					<li><a href="<?php echo get_page_link(PAGE_APPAM); ?>">APPAM</a>
 					</li>
-					<li><a href="#">Multimedia</a>
+					<li><a href="<?php echo get_page_link(PAGE_TARPUY); ?>">Tarpuy</a>
 					</li>
                 </ul>
                 <ul class="left">
-					<li><a href="#">Aceca de...</a>
+					<li><a href="#">Nuestra Institución</a>
 					</li>
-					<li><a href="#">Contáctenos</a>
+					<li><a href="#">Tienda Solidaria</a>
 					</li>
 					<li><a href="#">Noticias</a>
 					</li>
-					<li><a href="#">Galería</a>
-					</li>
 					<li><a href="#">Galería Multimedia</a>
+					</li>
+					<li><a href="#">Contáctenos</a>
 					</li>
                 </ul>
 			</div>
 		</div>
 		<div class="right">
 			<ul class="iconos-sociales lh tar">
-                <li><a href="#" class="icono-facebook img-rpl">Facebook</a>
+                <li><a href="//www.facebook.com/cepas.puno" class="icono-facebook img-rpl">Facebook</a>
                 </li>
                 <li><a href="#" class="icono-twitter img-rpl">Twitter</a>
                 </li>

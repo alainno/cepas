@@ -122,7 +122,8 @@ a{color:#00b7ff}
 .main-col .submenu ul li a span.right{background-position:-200px 0;margin:5px -15px 0 0;visibility:hidden}
 .main-col h1{margin:0 0 0 -7px;font:28px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;line-height:30px;padding-bottom:20px;}
 .main-col h1 span{color:#bb6c00}
-.main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif}
+.main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;margin-top: 0}
+.main-col .fecha{font-size: 12px;color: #7A3400;display: block;margin-bottom: 1em}
 .main-col p{line-height:1.5em;margin-top:.5em}
 .main-col ul,.main-col ol{padding-left:21px;}
 .main-col ul li,.main-col ol li{padding-top:5px}

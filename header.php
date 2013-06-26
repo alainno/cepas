@@ -1,3 +1,12 @@
+<?php
+
+define('PAGE_GIES', 39);
+define('PAGE_TIKARIY', 42);
+define('PAGE_APPAM', 44);
+define('PAGE_TARPUY', 46);
+define('PAGE_CONTACTO', 50);
+
+?>
 <!DOCTYPE html><!--[if lt IE 7]>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7">
 </html><![endif]--><!--[if IE 7]>
@@ -29,9 +38,9 @@
 					<div class="arriba">
 						<div class="logo-container left">
 							<div class="logo">
-								<div class="logo-front"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.gif">
-								</div>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-back tac">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-front"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.gif">
+								</a>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-back tac" rel="nofollow">
 									<p class="ttu"><strong>Construyendo ciudadania&nbsp;</strong>desde nuestra&nbsp;
 										<strong>pluralidad&nbsp;</strong>y desde nuestras&nbsp;
 										<strong>diferencias</strong>
@@ -43,9 +52,9 @@
 							<div class="menu-arriba">
 								<ul class="lh right">
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="icono-casa"></span>Inicio</a></li>
-									<li><a href="#"><span class="icono-mail"></span>Webmail</a></li>
+									<li><a href="/webmail"><span class="icono-mail"></span>Webmail</a></li>
 									<li><a href="#"><span class="icono-mapa"></span>Ubicación</a></li>
-									<li><a href="#"><span class="icono-globo"></span>Contacto</a></li>
+									<li><a href="<?php echo get_page_link(50); ?>"><span class="icono-globo"></span>Contáctenos</a></li>
 								</ul>
 							</div>
 							<div class="accesos">
@@ -63,7 +72,7 @@
 						<ul class="lh">
 							<?php
 							
-							$pages = get_pages('parent=0&sort_column=menu_order');
+							$pages = get_pages('parent=0&sort_column=menu_order&exclude=37,50');
 							
 //							global $subpages;
 							//$subpages = array();

@@ -15,11 +15,7 @@ get_header();
 		<div class="clearer">
 			<div class="main-col left">
 				<h1>
-					<?php if(isset($subpages)): ?>
-					<?php echo get_the_title($padre_id); ?> /&nbsp;<span><?php the_title(); ?></span>
-					<?php else: ?>
-					<span><?php the_title(); ?></span>
-					<?php endif; ?>
+					<span>Noticias</span>
 				</h1>
 				<article>
 					<div class="clearer">
@@ -52,6 +48,8 @@ get_header();
 					</nav>
 						<?php endif; ?>
 					
+					<h2><?php the_title(); ?></h2>
+					<span class="fecha"><?php the_time('l, j \d\e F \d\e\l Y'); ?></span>
 					<?php the_content(); ?>
 					
 					

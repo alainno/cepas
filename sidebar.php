@@ -7,10 +7,10 @@
 						</header>
 						
 							<div id="slider-logos" class="tac mt5">
-								<div class="slide"><div><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-gies-mini.png" /></a></div></div>
-								<div class="slide"><div><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-tikariy.png" /></a></div></div>
-								<div class="slide"><div><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-appam.png" /></a></div></div>
-								<div class="slide"><div><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-tarpuy.png" /></a></div></div>
+								<div class="slide"><div><a href="<?php echo get_page_link(PAGE_GIES); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-gies-mini.png" /></a></div></div>
+								<div class="slide"><div><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-tikariy.png" /></a></div></div>
+								<div class="slide"><div><a href="<?php echo get_page_link(PAGE_APPAM); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-appam.png" /></a></div></div>
+								<div class="slide"><div><a href="<?php echo get_page_link(PAGE_TARPUY); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-tarpuy.png" /></a></div></div>
 							</div>
 						
 					</section>
