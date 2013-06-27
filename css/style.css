@@ -82,7 +82,7 @@ a{color:#00b7ff}
 .secciones section article h3{margin:0}
 .secciones section article .fecha{color:#7a3400;font-size:11px}
 .secciones section article p{margin:0}
-.secciones section article.portada>a{height:398px;overflow-x:hidden;overflow-y:auto}
+.secciones section article.portada>a{height:401px;overflow-x:hidden;overflow-y:auto}
 .secciones section .scroller{background:#a1f5fe;position:relative;height:80px;padding:10px 0;}
 .secciones section .scroller .boton-izq,.secciones section .scroller .boton-der{background:#303030;position:absolute;height:33px;width:33px;top:34px;display:table;-webkit-border-radius:17px;-moz-border-radius:17px;-ms-border-radius:17px;-o-border-radius:17px;border-radius:17px;}
 .secciones section .scroller .boton-izq .wrapper-icono,.secciones section .scroller .boton-der .wrapper-icono{display:table-cell;vertical-align:middle;}
@@ -136,6 +136,15 @@ a{color:#00b7ff}
 .main-col figure figcaption span,.main-col .wp-caption figcaption span,.main-col figure .wp-caption-text span,.main-col .wp-caption .wp-caption-text span{background-position:-222px -2px;margin-right:5px}
 .main-col img.alignleft{float:left;margin:0 20px 10px 0}
 .main-col img.alignright{float:right;margin:0 0 10px 20px}
+.lista-categoria article{margin-top: 10px;padding: 0}
+.lista-categoria article:first-child{margin-top: 0}
+.lista-categoria article > a{display:block;padding: 15px;text-decoration: none}
+.lista-categoria article > a:hover{background: #fabe6c}
+.lista-categoria article img.alignleft{margin: 0 15px 0 0}
+.lista-categoria article h2
+,.lista-categoria article p{color: #000}
+.paginacion a{display: block;height: 30px;line-height: 30px;padding: 0 15px;font-weight: bold;font-size: 12px;color: #000;background: #FFE5C9;text-decoration: none}
+.paginacion a:hover{background: #fabe6c}
 .right-col{width:240px;margin-top:55px}
 .right-col #slider-logos{width: 100%;height: 90px}
 .right-col #slider-logos .slide{position: absolute;width: 100%;height: 100%}

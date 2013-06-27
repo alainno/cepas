@@ -3,6 +3,7 @@
 	add_theme_support('post-thumbnails');
 	
 	add_image_size('portada-size', 440, 248, true);
+	add_image_size('scroll-size', 115, 80, true);
 
 
 	function resumen($texto, $limite=35, $puntos='...')

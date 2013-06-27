@@ -1,72 +1,49 @@
 <?php
 
-//global $subpages;
-$ancestors = get_post_ancestors($post->ID);
-$root = count($ancestors) - 1;
-$padre_id = $ancestors[$root];
-
-if($padre_id > 0){
-	$subpages = get_pages('child_of='.$padre_id.'&parent='.$padre_id.'&sort_column=menu_order');
+$categories = get_the_category();
+$category = $categories[0];
+if($category->parent > 0){
+	$parent_category = get_category($category->parent);
 }
 
 get_header();
 ?>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
 		<div class="clearer">
 			<div class="main-col left">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<h1>
-					<span>Noticias</span>
+					<?php if(isset($parent_category)): echo $parent_category->cat_name; ?> /&nbsp;<?php endif; ?>
+					<span><?php echo $category->cat_name; ?></span>
 				</h1>
 				<article>
 					<div class="clearer">
-						<?php if(isset($subpages)): ?>
-					<nav class="submenu left">
-						<ul>
-							<?php
-
-							 foreach($subpages as $subpage):
-							
-							?>
-							<li><a href="<?php echo get_page_link($subpage->ID); ?>" class="<?php echo $subpage->ID == $post->ID ? 'actual':''; ?>"><?php echo $subpage->post_title; ?>
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<?php
-							
-							endforeach;
-							
-							?>
-<!--							<li><a href="#" class="actual">Presentación
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<li><a href="#">Misión - Visión
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<li><a href="#">Objetivos
-									<span class="icono-triangulo right"></span></a>
-							</li>-->
-						</ul>
-					</nav>
-						<?php endif; ?>
-					
 					<h2><?php the_title(); ?></h2>
 					<span class="fecha"><?php the_time('l, j \d\e F \d\e\l Y'); ?></span>
 					<?php the_content(); ?>
-					
-					
-<!--					<figure class="right"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-foto-pagina.jpg">
-							<figcaption><span class="icono-ojo"></span>COOPAC Tikary
-
-							</figcaption></a>
-					</figure>-->
+					<?php
+						if($category->cat_ID == CATE_FOTO):
+							$img_id = get_post_thumbnail_id();
+							$img_url = wp_get_attachment_image_src($img_id, 'full', true);
+					?>
+					<img src="<?php echo $img_url[0]; ?>" width="610" />
+					<?php
+						elseif($category->cat_ID == CATE_AUDIO):
+							$audio = get_children( array('post_parent' => $post->ID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'audio' ) );
+							foreach($audio as $att_id => $att):
+					?>
+							<audio src="<?php echo wp_get_attachment_url($att_id); ?>" controls="controls" style="width: 100%;height: 30px" />
+					<?php endforeach; endif; ?>
 					</div>
 				</article>
+<!--				<div class="paginacion clearer mt15">
+					<div class="left"><?php //previous_posts_link('&laquo; Anterior'); ?></div>
+					<div class="right"><?php //next_posts_link('Siguiente &raquo;'); ?></div>
+				</div>-->
+				<?php endwhile; endif; ?>
 			</div>
 			<?php get_sidebar(); ?>
 		</div>
-			<?php
-		endwhile;
-	endif;
-	?>
 	<?php
 	get_footer();
 	?>

@@ -1,10 +1,51 @@
 <?php
 
+define('PAGE_GRUPO_GIES', 37);
 define('PAGE_GIES', 39);
 define('PAGE_TIKARIY', 42);
 define('PAGE_APPAM', 44);
 define('PAGE_TARPUY', 46);
 define('PAGE_CONTACTO', 50);
+
+define('CATE_NOTICIAS', 2);
+define('CATE_MULTIMEDIA', 3);
+define('CATE_VIDEO', 4);
+define('CATE_AUDIO', 5);
+define('CATE_FOTO', 6);
+
+
+//$menu = array(
+//	'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
+//	,'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
+//	
+//);
+
+$ancestors = get_post_ancestors($post->ID);
+$root = count($ancestors) - 1;
+$padre_id = $ancestors[$root];
+
+$actual_ids = array($post->ID, $padre_id);
+
+if(is_category()){
+	//$category = get_the_category();
+	$category = get_category(get_query_var('cat'));
+} elseif(is_single()){
+	$categories = get_the_category();
+	$category = $categories[0];
+}
+
+
+
+$menu = array(
+	'Nuestra Institución' => array('link' => get_page_link(12), 'actual' => in_array(2,$actual_ids)) 
+	,'Tienda Solidaria' => array('link' => get_page_link(5), 'actual' => in_array(5,$actual_ids))
+	,'Noticias' => array('link' => get_category_link(CATE_NOTICIAS), 'actual' => $category->cat_ID == CATE_NOTICIAS)
+//	,'Enlaces' => array('link' => get_page_link(6), 'actual' => in_array(6,$actual_ids))
+	,'Galería multimedia' => array('link' => get_category_link(CATE_MULTIMEDIA), 'actual' => $category->cat_ID == CATE_MULTIMEDIA)
+	,'Turismo' => array('link' => get_page_link(9), 'actual' => in_array(9,$actual_ids))
+	,'Donaciones' => array('link' => get_page_link(10), 'actual' => in_array(10,$actual_ids))
+);
+
 
 ?>
 <!DOCTYPE html><!--[if lt IE 7]>
@@ -54,7 +95,7 @@ define('PAGE_CONTACTO', 50);
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="icono-casa"></span>Inicio</a></li>
 									<li><a href="/webmail"><span class="icono-mail"></span>Webmail</a></li>
 									<li><a href="#"><span class="icono-mapa"></span>Ubicación</a></li>
-									<li><a href="<?php echo get_page_link(50); ?>"><span class="icono-globo"></span>Contáctenos</a></li>
+									<li><a href="<?php echo get_page_link(PAGE_CONTACTO); ?>"><span class="icono-globo"></span>Contáctenos</a></li>
 								</ul>
 							</div>
 							<div class="accesos">
@@ -72,7 +113,7 @@ define('PAGE_CONTACTO', 50);
 						<ul class="lh">
 							<?php
 							
-							$pages = get_pages('parent=0&sort_column=menu_order&exclude=37,50');
+							/*$pages = get_pages('parent=0&sort_column=menu_order&exclude=37,50');
 							
 //							global $subpages;
 							//$subpages = array();
@@ -92,8 +133,12 @@ define('PAGE_CONTACTO', 50);
 							<li><a href="<?php echo $page_link; ?>" class="<?php echo ($page->ID == $post->ID || $page->ID == $padre_id) ? 'actual':''; ?>"><?php echo $page->post_title; ?></a>
 							</li>
 							<?php
-							endforeach;
+							endforeach;*/
+							
+							foreach($menu as $title => $meta): $meta = (object)$meta;
 							?>
+							<li><a href="<?php echo $meta->link; ?>" class="<?php echo $meta->actual ? 'actual':''; ?>"><?php echo $title; ?></a></li>							
+							<?php endforeach; ?>
 						</ul>
 					</div>
 				</header>

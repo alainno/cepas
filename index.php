@@ -50,27 +50,22 @@ get_header();
 			<section>
 				<header>
                     <h2 class="left">Noticias
-                    </h2><a href="#" class="icono-flecha right img-rpl">Más...</a>
+                    </h2><a href="<?php echo get_category_link(CATE_NOTICIAS); ?>" title="Más noticias" class="icono-flecha right img-rpl">Más...</a>
 				</header>
 				<article class="mt5 portada">
 						<?php
 						
 						$recent_posts = wp_get_recent_posts(array(
 							'numberposts' => 1
+							,'category' => CATE_NOTICIAS
 						));
 						foreach($recent_posts as $recent):
-							//$images = get_children( array('post_parent' => $recent['ID'], 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order','numberposts'=>1));
 						?>
 						<a href="<?php echo get_permalink($recent['ID']); ?>">
 						<h3><?php echo $recent['post_title']; ?></h3>
 						<span class="fecha"><?php echo get_the_time('l, j \d\e F \d\e\l Y',$recent['ID']); ?></span>
 						<?php
 							if(has_post_thumbnail($recent['ID'])):
-							//if($images): foreach($images as $att_id => $image):
-								
-								//print_r($image);
-								//exit(0);
-								
 								$big_array = image_downsize(get_post_thumbnail_id($recent['ID']), 'portada-size');
 								$img_url = $big_array[0];
 						?>
@@ -83,27 +78,53 @@ get_header();
 						<?php
 						endforeach;
 						?>
-<!--						<h3>Los Familiares de Peruanos en Italia se vuelven Empresarios
-						</h3><span class="fecha">Viernes, 30 de Mayo del 2013</span>
-						<div class="foto mt5"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-noticia.jpg" width="440" height="248">
-						</div>
-						<p class="mt5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-						</p></a>-->
 				</article>
 			</section>
 		</div>
 		<div class="mitad right">
 			<section>
 				<header>
-                    <h2 class="left">Multimedia
-                    </h2><a href="#" class="icono-flecha right img-rpl">Más...</a>
+                    <h2 class="left">Multimedia</h2><a href="#" class="icono-flecha right img-rpl">Más...</a>
 				</header>
 				<div class="scroller mt5"><a href="#" class="boton-izq">
 						<div class="wrapper-icono tac"><span class="icono-flizq"></span>
 						</div></a>
                     <div class="ventana">
 						<ul class="lh">
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
+							<?php
+								$recent_media = wp_get_recent_posts(array(
+									'numberposts' => 9
+									,'category' => CATE_MULTIMEDIA
+								));
+								
+								foreach($recent_media as $media):
+									//print_r($media);
+									$media = (object)$media;
+									//$categories = get_the_category($media->ID);
+									$categories = wp_get_post_categories($media->ID);
+									
+									//print_r($categories);
+									
+									if(in_array(CATE_FOTO, $categories)){
+										$img_id = get_post_thumbnail_id($media->ID);
+										$img_url = wp_get_attachment_image_src($img_id, 'scroll-size', true);
+										$img_url = $img_url[0];
+									}elseif(in_array(CATE_VIDEO, $categories)){
+										preg_match('/\/v\/(.{11})|\/embed\/(.{11})/',$media->post_content,$matches);
+										$img_url = 'http://img.youtube.com/vi/'.$matches[2].'/1.jpg';
+									}
+									elseif(in_array(CATE_AUDIO, $categories)){
+										$img_url = get_template_directory_uri() . '/img/bg-audio.gif';
+									}
+									
+							?>
+							<li>
+								<a href="<?php echo get_permalink($media->ID); ?>" title="<?php echo $media->post_title ?>">
+									<img src="<?php echo $img_url; ?>" alt="<?php echo $media->post_title ?>" width="115" height="80">									
+								</a>
+							</li>
+							<?php endforeach; ?>
+<!--							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
 							</li>
 							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
 							</li>
@@ -122,7 +143,7 @@ get_header();
 							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
 							</li>
 							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
+							</li>-->
 						</ul>
                     </div><a href="#" class="boton-der">
 						<div class="wrapper-icono tac"><span class="icono-flder"></span>
@@ -131,8 +152,7 @@ get_header();
 			</section>
 			<section class="mt5">
 				<header>
-                    <h2 class="left">Campañas
-                    </h2>
+                    <h2 class="left">Campañas</h2>
 				</header>
 				<div class="mt5"><a href="//www.respiravida.pe" class="lnk-banner"><img src="<?php echo get_template_directory_uri(); ?>/img/banner-tbc.gif"></a>
 				</div>
@@ -163,8 +183,7 @@ get_header();
 				</section>
 				<section class="facebook right">
                     <header>
-						<h2>Facebook
-						</h2>
+						<h2>Facebook</h2>
                     </header>
                     <div class="mt10">
 						<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fcepas.puno&amp;width=210&amp;height=187&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=217716198355030" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:210px; height:187px;" allowTransparency="true"></iframe>
