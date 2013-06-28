@@ -3,18 +3,29 @@ get_header();
 ?>
 <div class="slider-container">
 	<div id="slider">
-		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide.jpg">
-			<p class="ttu">Tejiendo esperanza por el bien común
+		<?php
+			$recent_slides = wp_get_recent_posts(array(
+				'numberposts' => 5
+				,'category' => CATE_SLIDES
+				,'order' => 'ASC'
+			));
+			foreach($recent_slides as $slide): $slide = (object)$slide;
+				$img_id = get_post_thumbnail_id($slide->ID);
+				$img_url = wp_get_attachment_image_src($img_id, 'slide-size', true);
+		?>
+		<div class="slide"><img src="<?php echo $img_url[0]; ?>">
+			<p class="ttu"><?php echo $slide->post_title; ?>
 			</p>
 		</div>
-		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide2.jpg">
+		<?php endforeach; ?>
+<!--		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide2.jpg">
 			<p class="ttu">Artesanía Ecológica APPAM
 			</p>
 		</div>
 		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide3.jpg">
 			<p class="ttu">Microcine Tarpuy
 			</p>
-		</div>
+		</div>-->
 	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
 </div>
 <div class="accesos clearer">
@@ -84,7 +95,7 @@ get_header();
 		<div class="mitad right">
 			<section>
 				<header>
-                    <h2 class="left">Multimedia</h2><a href="#" class="icono-flecha right img-rpl">Más...</a>
+                    <h2 class="left">Multimedia</h2><a href="<?php echo get_category_link(CATE_MULTIMEDIA); ?>" class="icono-flecha right img-rpl">Más...</a>
 				</header>
 				<div class="scroller mt5"><a href="#" class="boton-izq">
 						<div class="wrapper-icono tac"><span class="icono-flizq"></span>
@@ -124,26 +135,6 @@ get_header();
 								</a>
 							</li>
 							<?php endforeach; ?>
-<!--							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>
-							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-miniatura.jpg" alt="Play"></a>
-							</li>-->
 						</ul>
                     </div><a href="#" class="boton-der">
 						<div class="wrapper-icono tac"><span class="icono-flder"></span>
@@ -160,25 +151,22 @@ get_header();
 			<div class="clearer mt5">
 				<section class="folletos left">
                     <header>
-						<h2 class="left">Folletos
-						</h2><a href="#" class="icono-flecha right img-rpl">Más...</a>
+						<h2 class="left">Folletos</h2>
+						<!--<a href="#" class="icono-flecha right img-rpl">Más...</a>-->
                     </header>
                     <ul class="lista mt5">
-						<li><a href="#">Comercio Justo
+						<?php
+						
+						$recent_pdf = wp_get_recent_posts(array(
+								'numberposts' => 5
+								,'category' => CATE_FOLLETOS
+						));
+							foreach($recent_pdf as $pdf): $pdf = (object)$pdf;
+						?>
+						<li><a href="<?php echo get_permalink($pdf->ID); ?>"><?php echo $pdf->post_title; ?>
 								<span class="icono-pdf right"></span></a>
 						</li>
-						<li><a href="#">Economia Solidaria
-								<span class="icono-pdf right"></span></a>
-						</li>
-						<li><a href="#">Finanzas Solidarias
-								<span class="icono-pdf right"></span></a>
-						</li>
-						<li><a href="#">Turismo Solidario
-								<span class="icono-pdf right"></span></a>
-						</li>
-						<li><a href="#">Desarrollo Económico Local
-								<span class="icono-pdf right"></span></a>
-						</li>
+						<?php endforeach; ?>
                     </ul>
 				</section>
 				<section class="facebook right">

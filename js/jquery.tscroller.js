@@ -24,13 +24,13 @@
 			
 //			var thumbnail_width = $first_li.find('img').width() + parseInt($first_li.css('margin-right')) + parseInt($first_li.css('margin-left'));
 			var thumbnail_width = $first_li.width() + parseInt($first_li.css('margin-right')) + parseInt($first_li.css('margin-left'));
-			console.log('li width:' + $first_li.width());
+			//console.log('li width:' + $first_li.width());
 			
 			//console.log('img width: ' + thumbnail_width);
 			//console.log('window width: ' + $this.width());
 			var offset = params['offset'] || Math.floor($this.width() / thumbnail_width);
 			
-			console.log('offset: ' + offset);
+			//console.log('offset: ' + offset);
 			
 			if(total_lis > 0){
 				$ul.css({
@@ -40,6 +40,7 @@
 			
 			// mover
 			$(params['go']).click(function(){
+				//alert('GO:' + params['go']);
 				$this.show().animate({scrollLeft: $this.scrollLeft()+thumbnail_width*offset},'quick');
 				return false;						 
 			});

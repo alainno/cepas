@@ -24,6 +24,24 @@
 					</section>
 					<section class="mt10">
 						<header>
+							<h2 class="left">Folletos</h2>
+						</header>
+						<ul class="lista mt5">
+							<?php
+							$recent_pdf = wp_get_recent_posts(array(
+								'numberposts' => 5
+								, 'category' => CATE_FOLLETOS
+							));
+							foreach ($recent_pdf as $pdf): $pdf = (object) $pdf;
+								?>
+								<li><a href="<?php echo get_permalink($pdf->ID); ?>"><?php echo $pdf->post_title; ?>
+										<span class="icono-pdf right"></span></a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</section>					
+					<section class="mt10">
+						<header>
 							<h2>Facebook</h2>
 						</header>
 						<div class="mt5">

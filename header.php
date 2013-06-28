@@ -12,6 +12,8 @@ define('CATE_MULTIMEDIA', 3);
 define('CATE_VIDEO', 4);
 define('CATE_AUDIO', 5);
 define('CATE_FOTO', 6);
+define('CATE_FOLLETOS', 7);
+define('CATE_SLIDES', 8);
 
 
 //$menu = array(

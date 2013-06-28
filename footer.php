@@ -5,7 +5,7 @@
 			</h2>
 		</header>
 		<ul class="logos lh mt5">
-			<li><a href="//www.dosorillas.org"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-dos-orillas.png" alt="Dos Orillas"></a>
+			<li><a href="//proadelperu.jimdo.com/proyecto-dos-orillas-due-sponde/"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-dos-orillas.png" alt="Dos Orillas"></a>
 			</li>
 			<li><a href="//www.mlal.org"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-progettomondo.png" alt="Progetto Mondo"></a>
 			</li>
@@ -76,6 +76,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.9.1.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.tscroller.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <?php wp_footer(); ?>
 </body>

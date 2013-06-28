@@ -4,7 +4,7 @@
 	
 	add_image_size('portada-size', 440, 248, true);
 	add_image_size('scroll-size', 115, 80, true);
-
+	add_image_size('slide-size', 950, 315, true);
 
 	function resumen($texto, $limite=35, $puntos='...')
 	{
