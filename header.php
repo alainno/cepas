@@ -1,21 +1,5 @@
 <?php
 
-define('PAGE_GRUPO_GIES', 37);
-define('PAGE_GIES', 39);
-define('PAGE_TIKARIY', 42);
-define('PAGE_APPAM', 44);
-define('PAGE_TARPUY', 46);
-define('PAGE_CONTACTO', 50);
-
-define('CATE_NOTICIAS', 2);
-define('CATE_MULTIMEDIA', 3);
-define('CATE_VIDEO', 4);
-define('CATE_AUDIO', 5);
-define('CATE_FOTO', 6);
-define('CATE_FOLLETOS', 7);
-define('CATE_SLIDES', 8);
-
-
 //$menu = array(
 //	'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
 //	,'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
@@ -40,7 +24,8 @@ if(is_category()){
 
 $menu = array(
 	'Nuestra Institución' => array('link' => get_page_link(12), 'actual' => in_array(2,$actual_ids)) 
-	,'Tienda Solidaria' => array('link' => get_page_link(5), 'actual' => in_array(5,$actual_ids))
+//	,'Tienda Solidaria' => array('link' => get_page_link(5), 'actual' => in_array(5,$actual_ids))
+	,'Tienda Solidaria' => array('link' => get_category_link(CATE_CATALOGO), 'actual' => $category->cat_ID == CATE_CATALOGO)
 	,'Noticias' => array('link' => get_category_link(CATE_NOTICIAS), 'actual' => $category->cat_ID == CATE_NOTICIAS)
 //	,'Enlaces' => array('link' => get_page_link(6), 'actual' => in_array(6,$actual_ids))
 	,'Galería multimedia' => array('link' => get_category_link(CATE_MULTIMEDIA), 'actual' => $category->cat_ID == CATE_MULTIMEDIA)
@@ -96,18 +81,18 @@ $menu = array(
 								<ul class="lh right">
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="icono-casa"></span>Inicio</a></li>
 									<li><a href="/webmail"><span class="icono-mail"></span>Webmail</a></li>
-									<li><a href="#"><span class="icono-mapa"></span>Ubicación</a></li>
+									<!--<li><a href="#"><span class="icono-mapa"></span>Ubicación</a></li>-->
 									<li><a href="<?php echo get_page_link(PAGE_CONTACTO); ?>"><span class="icono-globo"></span>Contáctenos</a></li>
 								</ul>
 							</div>
 							<div class="accesos">
 								<div class="banner-container left"><img src="<?php echo get_template_directory_uri(); ?>/img/banner.gif">
 								</div>
-								<form id="form-buscar" class="right">
-									<input type="text" placeholder="Buscar..." class="left">
-									<button type="submit" class="boton left ml5"><span class="icono-buscar"></span>
-									</button>
+								<form id="form-buscar" class="right" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+									<input type="text" placeholder="Buscar..." class="left" id="s" name="s" value="<?php echo get_search_query(); ?>">
+									<button type="submit" id="searchsubmit" class="boton left ml5"><span class="icono-buscar"></span></button>
 								</form>
+								<?php //get_search_form(); ?>
 							</div>
 						</div>
 					</div>

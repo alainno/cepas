@@ -24,32 +24,23 @@ get_header();
 				<article>
 					<div class="clearer">
 						<?php if(isset($subpages)): ?>
-					<nav class="submenu left">
-						<ul>
-							<?php
+						<nav class="submenu left">
+							<ul>
+								<?php
 
-							 foreach($subpages as $subpage):
-							
-							?>
-							<li><a href="<?php echo get_page_link($subpage->ID); ?>" class="<?php echo $subpage->ID == $post->ID ? 'actual':''; ?>"><?php echo $subpage->post_title; ?>
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<?php
-							
-							endforeach;
-							
-							?>
-<!--							<li><a href="#" class="actual">Presentación
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<li><a href="#">Misión - Visión
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<li><a href="#">Objetivos
-									<span class="icono-triangulo right"></span></a>
-							</li>-->
-						</ul>
-					</nav>
+								foreach($subpages as $subpage):
+
+								?>
+								<li><a href="<?php echo get_page_link($subpage->ID); ?>" class="<?php echo $subpage->ID == $post->ID ? 'actual':''; ?>"><?php echo $subpage->post_title; ?>
+										<span class="icono-triangulo right"></span></a>
+								</li>
+								<?php
+
+								endforeach;
+
+								?>
+							</ul>
+						</nav>
 						<?php endif; ?>
 					
 					<?php the_content(); ?>

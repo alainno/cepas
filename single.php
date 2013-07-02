@@ -6,6 +6,15 @@ if($category->parent > 0){
 	$parent_category = get_category($category->parent);
 }
 
+//echo $category->cat_ID;
+
+if(in_array(CATE_CATALOGO, array($category->cat_ID, $parent_category->cat_ID))){
+
+//if(in_category(9, $post->ID)){
+	include TEMPLATEPATH . '/single-producto.php';
+	exit(0);
+}
+
 get_header();
 ?>
 
@@ -42,17 +51,17 @@ get_header();
 							foreach($pdf as $att_id => $att):
 								$pdf_url = wp_get_attachment_url($att_id);
 					?>
-					<iframe src="http://docs.google.com/gview?url=<?php echo $pdf_url; ?>&embedded=true" style="width:100%; height:600px;" frameborder="0"></iframe>
+					<iframe src="http://docs.google.com/gview?url=<?php echo $pdf_url; ?>&embedded=true" style="width:100%; height:500px;" frameborder="0"></iframe>
 					<?php endforeach; ?>
 					<?php else: ?>
 					<?php the_content(); ?>
 					<?php endif; ?>
 					</div>
 				</article>
-<!--				<div class="paginacion clearer mt15">
-					<div class="left"><?php //previous_posts_link('&laquo; Anterior'); ?></div>
-					<div class="right"><?php //next_posts_link('Siguiente &raquo;'); ?></div>
-				</div>-->
+				<div class="paginacion clearer mt15">
+					<div class="left"><?php next_post_link('%link', '&laquo; Anterior', true); ?></div>
+					<div class="right"><?php previous_post_link('%link', 'Siguiente &raquo;', true); ?></div>
+				</div>
 				<?php endwhile; endif; ?>
 			</div>
 			<?php get_sidebar(); ?>

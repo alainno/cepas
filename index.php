@@ -163,7 +163,7 @@ get_header();
 						));
 							foreach($recent_pdf as $pdf): $pdf = (object)$pdf;
 						?>
-						<li><a href="<?php echo get_permalink($pdf->ID); ?>"><?php echo $pdf->post_title; ?>
+						<li><a href="<?php echo get_permalink($pdf->ID); ?>"><?php echo resumen($pdf->post_title,3,''); ?>
 								<span class="icono-pdf right"></span></a>
 						</li>
 						<?php endforeach; ?>

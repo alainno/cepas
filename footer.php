@@ -5,7 +5,7 @@
 			</h2>
 		</header>
 		<ul class="logos lh mt5">
-			<li><a href="//proadelperu.jimdo.com/proyecto-dos-orillas-due-sponde/"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-dos-orillas.png" alt="Dos Orillas"></a>
+			<li><a href="<?php echo get_page_link(133); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-dos-orillas.png" alt="Dos Orillas"></a>
 			</li>
 			<li><a href="//www.mlal.org"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-progettomondo.png" alt="Progetto Mondo"></a>
 			</li>
@@ -38,15 +38,15 @@
 					</li>
                 </ul>
                 <ul class="left">
-					<li><a href="#">Nuestra Institución</a>
+					<li><a href="<?php echo get_page_link(12); ?>">Nuestra Institución</a>
 					</li>
-					<li><a href="#">Tienda Solidaria</a>
+					<li><a href="<?php echo get_page_link(5); ?>">Tienda Solidaria</a>
 					</li>
-					<li><a href="#">Noticias</a>
+					<li><a href="<?php echo get_category_link(CATE_NOTICIAS); ?>">Noticias</a>
 					</li>
-					<li><a href="#">Galería Multimedia</a>
+					<li><a href="<?php echo get_category_link(CATE_MULTIMEDIA); ?>">Galería Multimedia</a>
 					</li>
-					<li><a href="#">Contáctenos</a>
+					<li><a href="<?php echo get_page_link(50); ?>">Contáctenos</a>
 					</li>
                 </ul>
 			</div>
