@@ -25,6 +25,13 @@ get_header();
 							$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail',true);
 					?>
 						<img src="<?php echo $thumb_url[0]; ?>" class="alignleft" width="150" height="150" />
+                                                
+                                                <?php 
+                                                    elseif($category->cat_ID == CATE_CATALOGO && has_post_thumbnail()):
+                                                        $thumb_id = get_post_thumbnail_id();
+							$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail',true);
+                                                ?>
+                                                <img src="<?php echo $thumb_url[0]; ?>" class="alignleft" width="187" height="120" />
 					<?php
 						elseif($category->cat_ID == CATE_MULTIMEDIA):
 							

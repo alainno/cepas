@@ -39,12 +39,12 @@
                 </ul>
                 <ul class="left">
 					<li><a href="<?php echo get_page_link(12); ?>">Nuestra Institución</a>
+					</li> 
+					<li><a href="<?php echo get_category_link(9); ?>">Tienda Solidaria</a>
 					</li>
-					<li><a href="<?php echo get_page_link(5); ?>">Tienda Solidaria</a>
+					<li><a href="<?php echo get_category_link(2); ?>">Noticias</a>
 					</li>
-					<li><a href="<?php echo get_category_link(CATE_NOTICIAS); ?>">Noticias</a>
-					</li>
-					<li><a href="<?php echo get_category_link(CATE_MULTIMEDIA); ?>">Galería Multimedia</a>
+					<li><a href="<?php echo get_category_link(3); ?>">Galería Multimedia</a>
 					</li>
 					<li><a href="<?php echo get_page_link(50); ?>">Contáctenos</a>
 					</li>

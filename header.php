@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 //$menu = array(
 //	'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
 //	,'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
@@ -81,18 +84,18 @@ $menu = array(
 								<ul class="lh right">
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="icono-casa"></span>Inicio</a></li>
 									<li><a href="/webmail"><span class="icono-mail"></span>Webmail</a></li>
-									<!--<li><a href="#"><span class="icono-mapa"></span>Ubicación</a></li>-->
+									<li><a href="<?php echo get_page_link(PAGE_UBICACION); ?>"><span class="icono-mapa"></span>Ubicación</a></li>
 									<li><a href="<?php echo get_page_link(PAGE_CONTACTO); ?>"><span class="icono-globo"></span>Contáctenos</a></li>
 								</ul>
 							</div>
 							<div class="accesos">
 								<div class="banner-container left"><img src="<?php echo get_template_directory_uri(); ?>/img/banner.gif">
 								</div>
-								<form id="form-buscar" class="right" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-									<input type="text" placeholder="Buscar..." class="left" id="s" name="s" value="<?php echo get_search_query(); ?>">
-									<button type="submit" id="searchsubmit" class="boton left ml5"><span class="icono-buscar"></span></button>
+								<form id="form-buscar" class="right">
+									<input type="text" placeholder="Buscar..." class="left">
+									<button type="submit" class="boton left ml5"><span class="icono-buscar"></span>
+									</button>
 								</form>
-								<?php //get_search_form(); ?>
 							</div>
 						</div>
 					</div>
