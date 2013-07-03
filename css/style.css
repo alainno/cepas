@@ -126,7 +126,7 @@ a{color:#356AA0}
 .main-col article .post-meta{color: #bb6c00; background: #fabd7b; padding: 5px 10px; font-size: 20px; display: inline-block; margin-bottom: 0; margin-top: 0}
 .main-col article  ul.post-meta li{list-style: none; padding: 0;}
 .main-col article  ul.post-meta li span{display: none}
-.main-col article h2{text-transform: uppercase; font-size: 20px;}
+/*.main-col article h2{text-transform: uppercase; font-size: 20px;}*/
 .main-col article .imgs-children{margin-left: 20px}
 .main-col article .imgs-children ul{list-style: none; padding-left: 0; padding: 0; margin: 0;}
 .main-col article .imgs-children ul li{padding: 0;}
@@ -149,8 +149,8 @@ div.imgs-children ul li img { width: 80px; height: 80px; cursor: pointer; }
 .main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;margin-top: 0}
 .main-col .fecha{font-size: 12px;color: #7A3400;display: block;margin-bottom: 1em}
 .main-col p{line-height:1.5em;margin-top:.5em; text-align: justify;}
-.main-col ul,.main-col ol{padding-left:21px;}
-.main-col ul li,.main-col ol li{padding-top:5px}
+.main-col ul,.main-col ol{padding-left:28px;}
+.main-col ul li,.main-col ol li{padding-top:5px;line-height: 1.5em}
 .main-col figure,.main-col .wp-caption{position:relative;width:auto !important;}
 .main-col figure.left,.main-col .wp-caption.left,.main-col figure.alignleft,.main-col .wp-caption.alignleft{float:left;margin:0 20px 10px 0}
 .main-col figure.right,.main-col .wp-caption.right,.main-col figure.alignright,.main-col .wp-caption.alignright{float:right;margin:0 0 10px 20px}
