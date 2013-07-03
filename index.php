@@ -34,25 +34,20 @@ get_header();
 		</div>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>">
-			<h2><span class="icono-tikary"></span>T'IKARIY
-
-			</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non.
-			</p></a>
+			<h2><span class="icono-tikary"></span>T'IKARIY</h2>
+			<?php $page = get_page(PAGE_TIKARIY); ?>
+			<p><?php echo resumen($page->post_content,28); ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_APPAM); ?>">
-			<h2><span class="icono-appam"></span>APPAM
-
-			</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non.
-			</p></a>
+			<h2><span class="icono-appam"></span>APPAM</h2>
+			<?php $page = get_page(PAGE_APPAM); ?>
+			<p><?php echo resumen($page->post_content,28); ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TARPUY); ?>">
 			<h2><span class="icono-tarpuy"></span>TARPUY
-
 			</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non.
-			</p></a>
+			<?php $page = get_page(PAGE_TARPUY); ?>
+			<p><?php echo resumen($page->post_content,28); ?></p></a>
 	</section>
 </div>
 <div class="secciones mt5">
