@@ -6,7 +6,7 @@
 .boton-grande{-webkit-border-radius:6px;-moz-border-radius:6px;-ms-border-radius:6px;-o-border-radius:6px;border-radius:6px;padding:9px 26px;font-size:18px}
 .boton-naranja{background-color:#f0b13f;background-image:-webkit-linear-gradient(top,#f0b13f 0%,#ce411b 100%);background-image:-moz-linear-gradient(top,#f0b13f 0%,#ce411b 100%);background-image:-ms-linear-gradient(top,#f0b13f 0%,#ce411b 100%);background-image:-o-linear-gradient(top,#f0b13f 0%,#ce411b 100%);background-image:linear-gradient(top,#f0b13f 0%,#ce411b 100%)}
 .lh{padding:0;margin:0;}
-.lh li{list-style:none;display:inline-block}
+.lh li{list-style:none;display:inline-block;*display:inline;zoom:1;}
 body{background:#977f5e url("../img/fondo.gif");font:13px Arial,"Helvetica Neue",Helvetica,sans-serif}
 a{color:#356AA0}
 .fondo-envoltura{position:relative}
@@ -35,13 +35,9 @@ a{color:#356AA0}
 .header .arriba .right-header .menu-arriba ul li a .icono-globo{background-position:-62px -2px}
 .header .arriba .right-header .accesos{margin-top:5px;}
 .header .arriba .right-header .accesos #form-buscar{margin-top:25px;}
-/*.header .arriba .right-header .accesos #searchform{margin-top:25px;float: right}*/
 .header .arriba .right-header .accesos #form-buscar input[type="text"]{border:1px solid #f99916;height:30px;line-height:30px;padding:0 8px;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;width:212px;-webkit-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;-moz-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;-ms-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;-o-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;font-weight:bold}
-/*.header .arriba .right-header .accesos #searchform label{display: none}*/
-/*.header .arriba .right-header .accesos #searchform #s{border:1px solid #f99916;height:30px;line-height:30px;padding:0 8px;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px;width:212px;-webkit-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;-moz-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;-ms-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;-o-box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;box-shadow:1px 1px 4px 0 rgba(0,0,0,0.35) inset;font-weight:bold}*/
 .header .arriba .right-header .accesos #form-buscar .boton{line-height:22px;-webkit-box-shadow:inset 1px 1px #f9c279;-moz-box-shadow:inset 1px 1px #f9c279;-ms-box-shadow:inset 1px 1px #f9c279;-o-box-shadow:inset 1px 1px #f9c279;box-shadow:inset 1px 1px #f9c279;background-color:#f99916;background-image:-webkit-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:-moz-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:-ms-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:-o-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:linear-gradient(bottom,#f99916 0%,#ffb44d 100%);border:1px solid #9c9c9c;}
 .header .arriba .right-header .accesos #form-buscar .boton .icono-buscar{background-position:-82px -2px}
-.header .arriba .right-header .accesos #searchform #searchsubmit{line-height:22px;-webkit-box-shadow:inset 1px 1px #f9c279;-moz-box-shadow:inset 1px 1px #f9c279;-ms-box-shadow:inset 1px 1px #f9c279;-o-box-shadow:inset 1px 1px #f9c279;box-shadow:inset 1px 1px #f9c279;background-color:#f99916;background-image:-webkit-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:-moz-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:-ms-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:-o-linear-gradient(bottom,#f99916 0%,#ffb44d 100%);background-image:linear-gradient(bottom,#f99916 0%,#ffb44d 100%);border:1px solid #9c9c9c;}
 .header .menu{height:38px;border-bottom:2px solid #bb6c00;}
 .header .menu ul{background:#f99916;height:100%;}
 .header .menu ul li{border-left:1px solid #fff;float:left;}
@@ -98,7 +94,7 @@ a{color:#356AA0}
 .secciones section .scroller .boton-der .icono-flder{background-position:-120px -70px}
 .secciones section .scroller .ventana{left:54px;position:absolute;overflow:hidden;width:375px;font-size:0;}
 .secciones section .scroller .ventana ul{width:1250px}
-.secciones section .scroller .ventana li{width:115px;margin-right:10px;height:80px;background:#303030}
+.secciones section .scroller .ventana li{width:115px;margin-right:10px;height:80px;background:#303030;margin-left:0px;}
 .secciones section .lnk-banner{border:1px solid #dedede;display:inline-block;}
 .secciones section .lnk-banner img{display:block}
 .secciones section .lnk-banner:hover{border-color:#ccc}
@@ -115,6 +111,29 @@ a{color:#356AA0}
 .secciones section.folletos{width:250px}
 .secciones section.facebook{width:210px}
 .main-col{width:670px;padding:10px;}
+.main-col div.cuerpo2 article{padding:0px;background:#fff}
+
+.main-col .productolist{width: 100%}
+.main-col .productolist .product{background: #ffe5c9; margin-left: 25px; margin-bottom: 25px}
+.main-col .productolist .product a{display: block; text-decoration: none; padding: 16px;}
+.main-col .productolist .product a:hover{background: #fabe6c;}
+.main-col .productolist .product img{margin-bottom: -4px;}
+.main-col .productolist .product h2{background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);text-align: center; color: #fff; position: absolute; margin-top: -30px; text-align: center; margin-bottom: 0;width: 166px; height: 30px; line-height: 30px; font-weight: normal; font-family: arial; font-size: 12px}
+
+.main-col article p.precio{color: #bb6c00; background: #fabd7b; padding: 2px 10px; font-size: 20px; display: inline}
+.main-col article .cpm-map{margin-bottom: 10px !important}
+.main-col article img#img-cat-main{margin-bottom: 19px}
+.main-col article .post-meta{color: #bb6c00; background: #fabd7b; padding: 5px 10px; font-size: 20px; display: inline-block; margin-bottom: 0; margin-top: 0}
+.main-col article  ul.post-meta li{list-style: none; padding: 0;}
+.main-col article  ul.post-meta li span{display: none}
+.main-col article h2{text-transform: uppercase; font-size: 20px;}
+.main-col article .imgs-children{margin-left: 20px}
+.main-col article .imgs-children ul{list-style: none; padding-left: 0; padding: 0; margin: 0;}
+.main-col article .imgs-children ul li{padding: 0;}
+.main-col article .imgs-children ul li img{padding:19px;background:#f7d0a6;; margin-bottom: 25px; margin-right: 0;}
+
+div.imgs-children ul li img { width: 80px; height: 80px; cursor: pointer; }
+
 .main-col article{padding:20px;background:#ffe5c9}
 .main-col .submenu{background:#f99916;margin:0 20px 10px 0;width:160px;}
 .main-col .submenu ul{margin:0;padding:0;}
@@ -124,11 +143,12 @@ a{color:#356AA0}
 .main-col .submenu ul li a:hover,.main-col .submenu ul li a.actual{background:#e0860b;}
 .main-col .submenu ul li a:hover span.right,.main-col .submenu ul li a.actual span.right{visibility:visible}
 .main-col .submenu ul li a span.right{background-position:-200px 0;margin:5px -15px 0 0;visibility:hidden}
+.main-col .submenu ul li a span.blanco{background-position:-240px 0;margin:5px -15px 0 0;visibility:hidden}
 .main-col h1{margin:0 0 0 -7px;font:28px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;line-height:30px;padding-bottom:20px;}
 .main-col h1 span{color:#bb6c00}
 .main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;margin-top: 0}
 .main-col .fecha{font-size: 12px;color: #7A3400;display: block;margin-bottom: 1em}
-.main-col p{line-height:1.5em;margin-top:.5em}
+.main-col p{line-height:1.5em;margin-top:.5em; text-align: justify;}
 .main-col ul,.main-col ol{padding-left:21px;}
 .main-col ul li,.main-col ol li{padding-top:5px}
 .main-col figure,.main-col .wp-caption{position:relative;width:auto !important;}
@@ -141,6 +161,7 @@ a{color:#356AA0}
 .main-col img.alignleft{float:left;margin:0 20px 10px 0}
 .main-col img.alignright{float:right;margin:0 0 10px 20px}
 .main-col article audio{width: 100%;}
+.lista-categoria article .lista{margin-top: 10px;padding: 0}
 .lista-categoria article{margin-top: 10px;padding: 0}
 .lista-categoria article:first-child{margin-top: 0}
 .lista-categoria article > a{display:block;padding: 15px;text-decoration: none}

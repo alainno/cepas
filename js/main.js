@@ -32,4 +32,14 @@ function main(){
 			$div_audio.show().html(embed);
 		}
 	}
+	
+	/* Tienda - Catalogo */
+	$(".imgs-children ul li img").click(cambiarImagen);
+}
+
+function cambiarImagen()
+{
+	$this = $(this);
+	src = $this.attr("src");
+	$("#img-cat-main").attr("src", src);
 }

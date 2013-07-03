@@ -45,7 +45,7 @@
 							<h2>Facebook</h2>
 						</header>
 						<div class="mt5">
-						<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fcepas.puno&amp;width=240&amp;height=187&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=217716198355030" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:187px;" allowTransparency="true"></iframe>
+						<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fcepas.puno&amp;width=240&amp;height=191&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=217716198355030" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:191px;" allowTransparency="true"></iframe>
                     </div>
 					</section>
 				</div>
