@@ -34,7 +34,7 @@ get_header();
                                         $thumb_id = get_post_thumbnail_id();
                                         $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail',true);
                                 ?>
-                                <img src="<?php echo $thumb_url[0]; ?>" class="" width="166" height="166" />
+                                <img src="<?php echo $thumb_url[0]; ?>" class="" width="183" height="183" />
                                 <h2><?php the_title(); ?></h2>
                     <!--                        <p>S/. 12.50</p>-->
                             </a>
