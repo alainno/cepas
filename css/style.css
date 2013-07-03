@@ -115,10 +115,10 @@ a{color:#356AA0}
 
 .main-col .productolist{margin-left: -15px;}
 .main-col .productolist .product{background: #ffe5c9; margin-bottom: 15px; margin-left: 15px;}
-.main-col .productolist .product a{display: block; text-decoration: none; padding: 15px;}
+.main-col .productolist .product a{display: block; text-decoration: none; padding: 15px; width: 183px;height: 183px;position: relative}
 .main-col .productolist .product a:hover{background: #fabe6c;}
 .main-col .productolist .product img{margin-bottom: -4px;}
-.main-col .productolist .product h2{background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);text-align: center; color: #fff; position: absolute; margin-top: -30px; text-align: center; margin-bottom: 0;width: 183px; height: 30px; line-height: 30px; font-weight: normal; font-family: arial; font-size: 12px}
+.main-col .productolist .product p{background: rgba(0, 0, 0, 0.5);text-align: center; color: #fff; position: absolute; height: 30px; line-height: 30px; left: 15px;right: 15px;bottom: 15px;margin: 0}
 
 .main-col article p.precio{color: #bb6c00; background: #fabd7b; padding: 2px 10px; font-size: 20px; display: inline}
 .main-col article .cpm-map{margin-bottom: 10px !important}
@@ -127,7 +127,7 @@ a{color:#356AA0}
 .main-col article  ul.post-meta li{list-style: none; padding: 0;}
 .main-col article  ul.post-meta li span{display: none}
 /*.main-col article h2{text-transform: uppercase; font-size: 20px;}*/
-.main-col article .imgs-children{margin-left: 20px}
+.main-col article .imgs-children{margin-left: 15px}
 .main-col article .imgs-children ul{list-style: none; padding-left: 0; padding: 0; margin: 0;}
 .main-col article .imgs-children ul li{padding: 0;}
 .main-col article .imgs-children ul li img{padding:15px;background:#f7d0a6; margin-bottom: 15px; margin-right: 0;}
