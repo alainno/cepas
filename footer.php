@@ -1,5 +1,5 @@
 <?php
-die('Footer');
+//die('Footer');
 ?>
 
 <div class="secciones mt5">	
