@@ -43,7 +43,9 @@ get_header();
 						$_precio = get_post_meta(get_the_ID());
 						$precio = $_precio["Precio"][0];
                         ?>
-                        <img id="img-cat-main" src="<?php echo $thumb_url[0]; ?>" class="" width="495" height="420" />
+						<div class="clearer">
+                        <!--<img id="img-cat-main" src="<?php echo $thumb_url[0]; ?>" class="left" width="495" height="420" />-->
+                        <img id="img-cat-main" src="<?php echo get_theme_template; ?>" class="left" width="495" height="420" />
                         <div class="imgs-children right">
                             <ul>
 								<?php
@@ -57,6 +59,7 @@ get_header();
 
                             </ul>
                         </div>
+						</div>
                         <p><?php echo removeImages($content); ?></p>
                         <p class="precio"><?php echo $precio; ?></p>
                 </article>
