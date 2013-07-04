@@ -34,32 +34,54 @@ get_header();
                 <article class="producto">
                         <h2><?php the_title(); ?></h2>
                         <?php
+                        $post_id = get_the_ID();
+                        
+                        $conf = array(
+                                        'numberposts' => -1,
+                                        'post_parent' => $post_id,
+                                        'post_status' => 'inherit',
+                                        'post_type' => 'attachment',
+                                        'post_mime_type' => 'image',
+                                        'order' => 'ASC',
+                                        'orderby' => 'menu_order'
+                                      );
+                        
+                        $img_ids = get_posts($conf);
+                        
+                        $images = array();
+                        $max_images = 3;
+                        for($i=0; $i<$max_images; $i++)
+                        {
+                            $src = wp_get_attachment_image_src($img_ids[$i]->ID, 'producto-size');
+                            $images[$i]["src"] = $src[0];
+                            $src_thumb = wp_get_attachment_image_src($img_ids[$i]->ID, 'producto-thumb-size');
+                            $images[$i]["src_thumb"] = $src_thumb[0];
+                        }
+                        
                         $thumb_id = get_post_thumbnail_id();
                         $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
-						$content = get_the_content();
-						$_images = getImages($content);
-						$images = $_images[0];
-						
-						$_precio = get_post_meta(get_the_ID());
-						$precio = $_precio["Precio"][0];
+                        $content = get_the_content();
+
+                        $_precio = get_post_meta(get_the_ID());
+                        $precio = $_precio["Precio"][0];
                         ?>
-						<div class="clearer">
-							<div class="left">
-								<img id="img-cat-main" src="<?php echo $thumb_url[0]; ?>" width="495" height="420" />
-							</div>
-							<div class="imgs-children right">
-								<ul>
-									<?php
-									for($i=0; $i<sizeof($images); $i++):
-									?>
-									<li><a href="#"><?php echo $images[$i]?></a></li>
-									<!--<li><?php echo $images[$i]?></li>-->
-									<?php
-									endfor;
-									?>
-								</ul>
-							</div>
-						</div>
+                        <div class="clearer">
+                            <div class="left">
+                                <img id="img-cat-main" src="<?php echo $images[0]["src"]; ?>" width="495" height="420" />
+                            </div>
+                            <div class="imgs-children right">
+                                <ul>
+                                    <?php
+                                    for($i=0; $i<sizeof($images); $i++):
+                                        $image = $images[$i];
+                                    ?>
+                                    <li><a href="<?php echo $image["src"];?>"><img src="<?php echo $image["src_thumb"];?>"/></a></li>
+                                    <?php
+                                    endfor;
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
                         <p><?php echo removeImages($content); ?></p>
                         <p class="precio"><?php echo $precio; ?></p>
                 </article>
