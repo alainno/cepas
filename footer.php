@@ -1,7 +1,3 @@
-<?php
-die('Footer');
-?>
-
 <div class="secciones mt5">	
 	<section>
 		<header>
