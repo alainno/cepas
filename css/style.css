@@ -126,7 +126,7 @@ a{color:#356AA0}
 .main-col article .line-etiq{border-top: 1px solid #f99916; margin-bottom: 15px;}
 
 .main-col article #etiq{position: absolute; margin-left: 15px;}
-.main-col article p.precio{color: #ffe5c9; font-size: 14px; display: inline; position: relative; margin-left: 80px; margin-bottom: 0; margin-top: 0;font-family: arial; line-height: 24px;}
+.main-col article p.precio{color: #ffe5c9; font-size: 14px; display: inline; position: relative; margin-left: 80px; margin-bottom: 0; margin-top: 0;font-family: arial; line-height: 24px; font-weight: bold;}
 
 .main-col article .cpm-map{margin-bottom: 10px !important}
 .main-col article img#img-cat-main{margin-bottom: 5px}
