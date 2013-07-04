@@ -139,6 +139,7 @@ div.imgs-children ul li img { width: 100px; height: 100px; cursor: pointer; }
 .main-col article .cpm-map{margin-bottom: 10px !important}
 
 .main-col article{padding: 15px;background:#ffe5c9}
+.main-col article ul li img:hover{background: #fabe6c}
 .main-col .submenu{background:#f99916;margin:0 20px 10px 0;width:160px;}
 .main-col .submenu ul{margin:0;padding:0;}
 .main-col .submenu ul li{list-style:none;border-top:1px solid #ffe5c9;padding:0;}
