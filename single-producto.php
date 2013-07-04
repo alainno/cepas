@@ -50,16 +50,21 @@ get_header();
                         
                         $images = array();
                         $max_images = 3;
+                        $thumb_id = get_post_thumbnail_id();
+                        
                         for($i=0; $i<$max_images; $i++)
                         {
-                            $src = wp_get_attachment_image_src($img_ids[$i]->ID, 'producto-size');
-                            $images[$i]["src"] = $src[0];
-                            $src_thumb = wp_get_attachment_image_src($img_ids[$i]->ID, 'producto-thumb-size');
-                            $images[$i]["src_thumb"] = $src_thumb[0];
+                            $id = $img_ids[$i]->ID;
+                            
+                            if($id != $thumb_id)
+                            {
+                                $src = wp_get_attachment_image_src($id, 'producto-size');
+                                $images[$i]["src"] = $src[0];
+                                $src_thumb = wp_get_attachment_image_src($id, 'producto-thumb-size');
+                                $images[$i]["src_thumb"] = $src_thumb[0];
+                            }
                         }
                         
-                        $thumb_id = get_post_thumbnail_id();
-                        $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
                         $content = get_the_content();
 
                         $_precio = get_post_meta(get_the_ID());
