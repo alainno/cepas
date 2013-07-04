@@ -32,7 +32,8 @@ get_header();
                                 </nav>
                             </div>-->
                 <article class="producto">
-                        <h2><?php the_title(); ?></h2>
+                        <h2><?php the_title(); ?> <img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="142" height="25" /><p class="precio">S/. 12.40</p></h2>
+                        <div class="line-etiq"></div>
                         <?php
                         $post_id = get_the_ID();
                         
