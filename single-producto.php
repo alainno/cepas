@@ -31,7 +31,7 @@ get_header();
                                     </ul>
                                 </nav>
                             </div>-->
-                <article>
+                <article class="producto">
                         <h2><?php the_title(); ?></h2>
                         <?php
                         $thumb_id = get_post_thumbnail_id();
@@ -44,21 +44,21 @@ get_header();
 						$precio = $_precio["Precio"][0];
                         ?>
 						<div class="clearer">
-                        <!--<img id="img-cat-main" src="<?php echo $thumb_url[0]; ?>" class="left" width="495" height="420" />-->
-                        <img id="img-cat-main" src="<?php echo get_theme_template; ?>" class="left" width="495" height="420" />
-                        <div class="imgs-children right">
-                            <ul>
-								<?php
-								for($i=0; $i<sizeof($images); $i++)
-								{
-								?>
-                                <li><?php echo $images[$i]?></li>
-								<?php
-								}
-								?>
-
-                            </ul>
-                        </div>
+							<div class="left">
+								<img id="img-cat-main" src="<?php echo $thumb_url[0]; ?>" width="495" height="420" />
+							</div>
+							<div class="imgs-children right">
+								<ul>
+									<?php
+									for($i=0; $i<sizeof($images); $i++):
+									?>
+									<li><a href="#"><?php echo $images[$i]?></a></li>
+									<!--<li><?php echo $images[$i]?></li>-->
+									<?php
+									endfor;
+									?>
+								</ul>
+							</div>
 						</div>
                         <p><?php echo removeImages($content); ?></p>
                         <p class="precio"><?php echo $precio; ?></p>
@@ -67,9 +67,6 @@ get_header();
                     <div class="left"><?php next_post_link('%link', '&laquo; Anterior', true); ?></div>
                     <div class="right"><?php previous_post_link('%link', 'Siguiente &raquo;', true); ?></div>
                 </div>
-                <!--                </div>-->
-
-
                 <?php
             endwhile;
         endif;
