@@ -31,45 +31,69 @@ get_header();
                                     </ul>
                                 </nav>
                             </div>-->
-                <article>
-                    <h2><?php the_title(); ?> <img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="142" height="25" /><p class="precio">S/. 12.40</p></h2>
-                    <div class="line-etiq"></div>
-                    <?php
-                    $thumb_id = get_post_thumbnail_id();
-                    $thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
-                    $content = get_the_content();
-                    $_images = getImages($content);
-                    $images = $_images[0];
+                <article class="producto">
+                        <h2><?php the_title(); ?></h2>
+                        <?php
+                        $post_id = get_the_ID();
+                        
+                        $conf = array(
+                                        'numberposts' => -1,
+                                        'post_parent' => $post_id,
+                                        'post_status' => 'inherit',
+                                        'post_type' => 'attachment',
+                                        'post_mime_type' => 'image',
+                                        'order' => 'ASC',
+                                        'orderby' => 'menu_order'
+                                      );
+                        
+                        $img_ids = get_posts($conf);
+                        
+                        $images = array();
+                        $max_images = 3;
+                        $thumb_id = get_post_thumbnail_id();
+                        
+                        for($i=0; $i<$max_images; $i++)
+                        {
+                            $id = $img_ids[$i]->ID;
+                            
+                            if($id != $thumb_id)
+                            {
+                                $src = wp_get_attachment_image_src($id, 'producto-size');
+                                $images[$i]["src"] = $src[0];
+                                $src_thumb = wp_get_attachment_image_src($id, 'producto-thumb-size');
+                                $images[$i]["src_thumb"] = $src_thumb[0];
+                            }
+                        }
+                        
+                        $content = get_the_content();
 
-                    $_precio = get_post_meta(get_the_ID());
-                    $precio = $_precio["Precio"][0];
-                    ?>
-                    <div class="clearer">
-        <!--<img id="img-cat-main" src="<?php echo $thumb_url[0]; ?>" class="left" width="495" height="420" />-->
-                        <img id="img-cat-main" src="<?php echo get_theme_template; ?>" class="left" width="495" height="420" />
-                        <div class="imgs-children right">
-                            <ul>
-                                <?php
-                                for ($i = 0; $i < sizeof($images); $i++) {
-                                    ?>
-                                    <li><?php echo $images[$i] ?></li>
+                        $_precio = get_post_meta(get_the_ID());
+                        $precio = $_precio["Precio"][0];
+                        ?>
+                        <div class="clearer">
+                            <div class="left">
+                                <img id="img-cat-main" src="<?php echo $images[0]["src"]; ?>" width="495" height="420" />
+                            </div>
+                            <div class="imgs-children right">
+                                <ul>
                                     <?php
-                                }
-                                ?>
-
-                            </ul>
+                                    for($i=0; $i<sizeof($images); $i++):
+                                        $image = $images[$i];
+                                    ?>
+                                    <li><a href="<?php echo $image["src"];?>"><img src="<?php echo $image["src_thumb"];?>"/></a></li>
+                                    <?php
+                                    endfor;
+                                    ?>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <p><?php echo removeImages($content); ?></p>
-                    <p class="precio"><?php echo $precio; ?></p>
+                        <p><?php echo removeImages($content); ?></p>
+                        <p class="precio"><?php echo $precio; ?></p>
                 </article>
                 <div class="paginacion clearer mt15">
                     <div class="left"><?php next_post_link('%link', '&laquo; Anterior', true); ?></div>
                     <div class="right"><?php previous_post_link('%link', 'Siguiente &raquo;', true); ?></div>
                 </div>
-                <!--                </div>-->
-
-
                 <?php
             endwhile;
         endif;

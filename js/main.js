@@ -34,12 +34,13 @@ function main(){
 	}
 	
 	/* Tienda - Catalogo */
-	$(".imgs-children ul li img").click(cambiarImagen);
+	$(".imgs-children ul li a").click(cambiarImagen);
 }
 
 function cambiarImagen()
 {
-	$this = $(this);
-	src = $this.attr("src");
-	$("#img-cat-main").attr("src", src);
+    $this = $(this);
+    src = $this.attr("href");
+    $("#img-cat-main").attr("src", src);
+    return false;
 }
