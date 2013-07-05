@@ -34,7 +34,7 @@ define('CATE_CATALOGO', 9);
 	function getImages($content)
 	{
 		preg_match_all('/<img[^>]+./', $content, $coincidencias);
-		return $coincidencias;
+		return $coincidencias[0];
 	}
 	
 	function removeImages($content)
