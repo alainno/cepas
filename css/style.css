@@ -120,13 +120,13 @@ a{color:#356AA0}
 .main-col .productolist .product a p{background: rgba(0, 0, 0, 0.5);text-align: center; color: #fff; position: absolute; height: 30px; line-height: 30px; left: 0;right: 0;bottom: 0;margin: 0;transition: height .3s linear}
 .main-col .productolist .product a:hover p{height: 0}
 
-/*.main-col .producto h2{text-transform: uppercase; font-size: 20px;}
-.main-col article p.precio{color: #bb6c00; background: #fabd7b; padding: 2px 10px; font-size: 20px; display: inline}*/
+.main-col .producto h2{text-transform: uppercase; font-size: 20px;;margin-bottom: 5px}
+/*.main-col article p.precio{color: #bb6c00; background: #fabd7b; padding: 2px 10px; font-size: 20px; display: inline}*/
 
 .main-col article .line-etiq{border-top: 1px solid #f99916; margin-bottom: 15px;}
 
 .main-col article #etiq{position: absolute; margin-left: 15px;}
-.main-col article p.precio{color: #ffe5c9; font-size: 14px; display: inline; position: relative; margin-left: 80px; margin-bottom: 0; margin-top: 0;font-family: arial; line-height: 24px;}
+.main-col article p.precio{color: #fff; font-size: 14px; font-weight: bold; display: inline; position: relative; margin-left: 80px; margin-bottom: 0; margin-top: 0;font-family: arial; line-height: 24px;}
 
 .main-col article .cpm-map{margin-bottom: 10px !important}
 .main-col article img#img-cat-main{margin-bottom: 5px}

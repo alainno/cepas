@@ -89,7 +89,6 @@ get_header();
                             </div>
                         </div>
                         <p><?php echo removeImages($content); ?></p>
-                        <p class="precio"><?php echo $precio; ?></p>
                 </article>
                 <div class="paginacion clearer mt15">
                     <div class="left"><?php next_post_link('%link', '&laquo; Anterior', true); ?></div>
