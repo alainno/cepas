@@ -35,6 +35,9 @@ get_header();
                         <h2><?php the_title(); ?></h2>
                         <?php
                         $post_id = get_the_ID();
+                        $content = get_the_content();
+                        $images2 = getImages($content);
+                        $titles = getTitle($images2);
                         
                         $conf = array(
                                         'numberposts' => -1,
@@ -50,22 +53,25 @@ get_header();
                         
                         $images = array();
                         $max_images = 3;
-                        $thumb_id = get_post_thumbnail_id();
+                        //$thumb_id = get_post_thumbnail_id();
                         
-                        for($i=0; $i<$max_images; $i++)
+                        $contador=0;
+                        for($i=0; $i<  sizeof($img_ids); $i++)
                         {
-                            $id = $img_ids[$i]->ID;
+                            $title = $img_ids[$i]->post_title;
                             
-                            if($id != $thumb_id)
+                            if(in_array($title, $titles))
                             {
+                                $id = $img_ids[$i]->ID;
                                 $src = wp_get_attachment_image_src($id, 'producto-size');
                                 $images[$i]["src"] = $src[0];
                                 $src_thumb = wp_get_attachment_image_src($id, 'producto-thumb-size');
                                 $images[$i]["src_thumb"] = $src_thumb[0];
+                                $contador++;
                             }
+                            
+                            if($contador == 3){break;}
                         }
-                        
-                        $content = get_the_content();
 
                         $_precio = get_post_meta(get_the_ID());
                         $precio = $_precio["Precio"][0];
@@ -77,12 +83,11 @@ get_header();
                             <div class="imgs-children right">
                                 <ul>
                                     <?php
-                                    for($i=0; $i<sizeof($images); $i++):
-                                        $image = $images[$i];
+                                    foreach($images as $image):
                                     ?>
                                     <li><a href="<?php echo $image["src"];?>"><img src="<?php echo $image["src_thumb"];?>"/></a></li>
                                     <?php
-                                    endfor;
+                                    endforeach;
                                     ?>
                                 </ul>
                             </div>

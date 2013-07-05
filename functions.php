@@ -33,12 +33,26 @@ define('CATE_CATALOGO', 9);
 	function getImages($content)
 	{
 		preg_match_all('/<img[^>]+./', $content, $coincidencias);
-		return $coincidencias;
+		return $coincidencias[0];
 	}
 	
 	function removeImages($content)
 	{
 	   return preg_replace('/<img[^>]+./','',$content);
-	}        
+	}
+        
+        function getTitle($images)
+        {
+            $titles = array();
+            
+            for($i=0; $i<sizeof($images); $i++)
+            {
+                $img = $images[$i];
+                preg_match('/alt="([^"]*)"/', $img, $coincidencias);
+                $titles[] = $coincidencias[1];
+            }
+            
+            return $titles;
+        }
 	
 ?>
