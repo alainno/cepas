@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 //$menu = array(
 //	'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
 //	,'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
@@ -101,6 +98,7 @@ $menu = array(
 					</div>
 					<div class="nav menu mt5">
 						<ul class="lh">
+							<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"<?php echo is_home()?' class="actual"':''; ?>>Inicio</a></li>
 							<?php
 							
 							/*$pages = get_pages('parent=0&sort_column=menu_order&exclude=37,50');

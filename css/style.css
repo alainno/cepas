@@ -110,7 +110,9 @@ a{color:#356AA0}
 .secciones section footer{height:5px;border-bottom:1px solid #f9c279}
 .secciones section.folletos{width:250px}
 .secciones section.facebook{width:210px}
+
 .main-col{width:670px;padding:10px;}
+
 .main-col div.cuerpo2 article{padding:0px;background:#fff}
 
 .main-col .productolist{margin-left: -15px;margin-top: -15px}
@@ -120,7 +122,8 @@ a{color:#356AA0}
 .main-col .productolist .product a p{background: rgba(0, 0, 0, 0.5);text-align: center; color: #fff; position: absolute; height: 30px; line-height: 30px; left: 0;right: 0;bottom: 0;margin: 0;transition: height .3s linear}
 .main-col .productolist .product a:hover p{height: 0}
 
-.main-col .producto h2{text-transform: uppercase; font-size: 20px;;margin-bottom: 5px}
+.main-col .producto h2{font-size: 20px;;margin-bottom: 5px}
+.main-col article.producto{padding: 15px}
 /*.main-col article p.precio{color: #bb6c00; background: #fabd7b; padding: 2px 10px; font-size: 20px; display: inline}*/
 
 .main-col article .line-etiq{border-top: 1px solid #f99916; margin-bottom: 15px;}
@@ -141,11 +144,12 @@ a{color:#356AA0}
 .main-col article .imgs-children li a:hover{background: #fabe6c}
 .main-col article .imgs-children li img{margin: 0;display: block}
 
-div.imgs-children ul li img { width: 100px; height: 100px; cursor: pointer; }
+/*div.imgs-children ul li img { width: 100px; height: 100px; cursor: pointer; }*/
 
 .main-col article .cpm-map{margin-bottom: 10px !important}
 
-.main-col article{padding: 15px;background:#ffe5c9}
+.main-col article
+,.wide-col article{padding: 20px;background:#ffe5c9}
 .main-col article ul li img:hover{background: #fabe6c}
 .main-col .submenu{background:#f99916;margin:0 20px 10px 0;width:160px;}
 .main-col .submenu ul{margin:0;padding:0;}
@@ -156,9 +160,11 @@ div.imgs-children ul li img { width: 100px; height: 100px; cursor: pointer; }
 .main-col .submenu ul li a:hover span.right,.main-col .submenu ul li a.actual span.right{visibility:visible}
 .main-col .submenu ul li a span.right{background-position:-200px 0;margin:5px -15px 0 0;visibility:hidden}
 .main-col .submenu ul li a span.blanco{background-position:-240px 0;margin:5px -15px 0 0;visibility:hidden}
-.main-col h1{margin:0 0 0 -7px;font:28px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;line-height:30px;padding-bottom:20px;}
-.main-col h1 span{color:#bb6c00}
-.main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;margin-top: 0}
+.main-col h1
+,.wide-col h1{margin:0 0 0 -7px;font:28px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;line-height:30px;padding-bottom:20px;}
+.main-col h1 span
+,.wide-col h1 span{color:#bb6c00}
+.main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;margin-top: 0;text-transform: uppercase}
 .main-col .fecha{font-size: 12px;color: #7A3400;display: block;margin-bottom: 1em}
 .main-col p{line-height:1.5em;margin-top:.5em; text-align: justify;}
 .main-col ul,.main-col ol{padding-left:28px;}
@@ -190,6 +196,10 @@ div.imgs-children ul li img { width: 100px; height: 100px; cursor: pointer; }
 .right-col #slider-logos .slide div{display: table;width: 100%;height: 100%}
 .right-col #slider-logos .slide div a{display: table-cell;vertical-align: middle}
 .right-col #slider-logos .slide div a:hover{background: #dedede}
+
+.wide-col{padding: 0 10px}
+.wide-col article p{margin: 0}
+
 .footer{margin:0 5px;background:#2b2929;border-top:4px solid #000;padding:15px;color:#a1a1a1;}
 .footer div.left strong{color:#fff}
 .footer div.left ul{margin:14px 0 0 0;padding:0;min-width:150px;}

@@ -39,15 +39,6 @@ get_header();
 							endforeach;
 							
 							?>
-<!--							<li><a href="#" class="actual">Presentación
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<li><a href="#">Misión - Visión
-									<span class="icono-triangulo right"></span></a>
-							</li>
-							<li><a href="#">Objetivos
-									<span class="icono-triangulo right"></span></a>
-							</li>-->
 						</ul>
 					</nav>
 						<?php endif; ?>
