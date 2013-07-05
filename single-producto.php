@@ -35,8 +35,8 @@ get_header();
                                     <?php
 									foreach($inlineImages[1] as $k => $image):
 										$img_id = get_attachment_id_from_url($image);
-										$thumb_src = wp_get_attachment_image_src($img_id, array(100,100));
-										$image_src = wp_get_attachment_image_src($img_id, array(495,420));
+										$thumb_src = wp_get_attachment_image_src($img_id, 'producto-thumb-size');
+										$image_src = wp_get_attachment_image_src($img_id, 'producto-size');
 										if($k == 0){
 											$first_image_src = $image_src[0];
 										}
