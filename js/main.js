@@ -37,7 +37,9 @@ function main(){
 	$(".imgs-children ul li a").click(cambiarImagen);
         $(".imgs-children ul li a").first().addClass('actual');
         
-        //$('.wpcf7-date').datepicker();
+        $('.wpcf7-date').datepicker();
+        
+        $('.wpcf7-date').css('border', '2px solid red');
 }
 
 function cambiarImagen()
