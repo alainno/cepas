@@ -8,94 +8,51 @@ get_header();
                     <?php if (isset($parent_category)): echo $parent_category->cat_name; ?> /&nbsp;<?php endif; ?>
                     <span><?php echo $category->cat_name; ?></span>
                 </h1>
-                <!--                <div class="clearer">-->
-
-                <!--            <div class="left-col left">
-                                <nav class="submenu">
-                                    <ul>
-                                        <li><a href="#" class="actual">Chompas
-                                                <span class="icono-triangulo right blanco"></span></a>
-                                        </li>
-                                        <li><a href="#">Pantalones
-                                                <span class="icono-triangulo right blanco"></span></a>
-                                        </li>
-                                        <li><a href="#">Suvenirs
-                                                <span class="icono-triangulo right blanco"></span></a>
-                                        </li>
-                                        <li><a href="#">Regalos
-                                                <span class="icono-triangulo right blanco"></span></a>
-                                        </li>
-                                        <li><a href="#">Recuerdos
-                                                <span class="icono-triangulo right blanco"></span></a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>-->
                 <article class="producto">
                     <?php 
-                    $_precio = get_post_meta(get_the_ID());
+						$_precio = get_post_meta(get_the_ID());
                         $precio = $_precio["Precio"][0];
                     ?>
-                        <h2><?php the_title(); ?> <img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="142" height="25" /><p class="precio"><?php echo $precio; ?></p></h2>
+                        <h2>
+							<?php the_title(); ?>
+							<?php if(!empty($precio) && is_numeric($precio)): ?>
+							<img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="142" height="25" />
+							<p class="precio">S/. <?php echo number_format($precio,2); ?></p>
+							<? endif; ?>
+						</h2>
                         <div class="line-etiq"></div>
                         <?php
-                        $post_id = get_the_ID();
+						
                         $content = get_the_content();
-                        $images2 = getImages($content);
-                        $titles = getTitle($images2);
-                        
-                        $conf = array(
-                                        'numberposts' => -1,
-                                        'post_parent' => $post_id,
-                                        'post_status' => 'inherit',
-                                        'post_type' => 'attachment',
-                                        'post_mime_type' => 'image',
-                                        'order' => 'ASC',
-                                        'orderby' => 'menu_order'
-                                      );
-                        
-                        $img_ids = get_posts($conf);
-                        
-                        $images = array();
-                        $max_images = 3;
-                        //$thumb_id = get_post_thumbnail_id();
-                        
-                        $contador=0;
-                        for($i=0; $i<sizeof($img_ids); $i++)
-                        {
-                            $title = $img_ids[$i]->post_title;
-                            
-                            if(in_array($title, $titles))
-                            {
-                                $id = $img_ids[$i]->ID;
-                                $src = wp_get_attachment_image_src($id, 'producto-size');
-                                $images[$i]["src"] = $src[0];
-                                $src_thumb = wp_get_attachment_image_src($id, 'producto-thumb-size');
-                                $images[$i]["src_thumb"] = $src_thumb[0];
-                                $contador++;
-                            }
-                            
-                            if($contador == 3){break;}
-                        }
-
-//                        $_precio = get_post_meta(get_the_ID());
-//                        $precio = $_precio["Precio"][0];
+	
+						$inlineImages = array();
+						preg_match_all('/src="([^"]*)"/i', $content, $inlineImages);
+						
                         ?>
                         <div class="clearer">
-                            <div class="left">
-                                <img id="img-cat-main" src="<?php echo $images[0]["src"]; ?>" width="495" height="420" />
-                            </div>
                             <div class="imgs-children right">
                                 <ul>
                                     <?php
-                                    foreach($images as $image):
+									foreach($inlineImages[1] as $k => $image):
+										$img_id = get_attachment_id_from_url($image);
+										$thumb_src = wp_get_attachment_image_src($img_id, array(100,100));
+										$image_src = wp_get_attachment_image_src($img_id, array(495,420));
+										if($k == 0){
+											$first_image_src = $image_src[0];
+										}
                                     ?>
-                                    <li><a href="<?php echo $image["src"];?>"><img src="<?php echo $image["src_thumb"];?>"/></a></li>
+                                    <li><a href="<?php echo $image_src[0]; ?>"><img src="<?php echo $thumb_src[0]; ?>"/></a></li>
                                     <?php
+										if($k >= 2){
+											break;
+										}
                                     endforeach;
                                     ?>
                                 </ul>
                             </div>
+                            <div class="left">
+                                <img id="img-cat-main" src="<?php echo $first_image_src ?>" width="495" height="420" />
+                            </div>							
                         </div>
                         <p><?php echo removeImages($content); ?></p>
                 </article>
@@ -107,15 +64,6 @@ get_header();
             endwhile;
         endif;
         ?>
-        <?php /*
-          $categories = get_categories(array(
-          'child_of' => CATE_CATALOGO
-          ));
-
-          foreach($categories as $category):
-          ?>
-          <?php echo $category->name; ?>
-          <?php endforeach; */ ?>
     </div>
     <?php get_sidebar(); ?>
 </div>
