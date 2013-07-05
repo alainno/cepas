@@ -31,8 +31,10 @@ get_header();
                         <?php
                         if ($category->cat_ID == CATE_FOTO):
                             $img_id = get_post_thumbnail_id();
-                            $img_url = wp_get_attachment_image_src($img_id, 'full', true);
-                            var_dump($img_url);
+                            if($img_id != '')
+                            {
+                                $img_url = wp_get_attachment_image_src($img_id, 'full', true);
+                            }
                             ?>
                             <img src="<?php echo $img_url[0]; ?>" width="630" />
                             <?php the_content(); ?>
