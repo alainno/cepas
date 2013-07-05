@@ -61,7 +61,7 @@ get_header();
                         //$thumb_id = get_post_thumbnail_id();
                         
                         $contador=0;
-                        for($i=0; $i<  sizeof($img_ids); $i++)
+                        for($i=0; $i<sizeof($img_ids); $i++)
                         {
                             $title = $img_ids[$i]->post_title;
                             
