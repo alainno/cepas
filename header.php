@@ -51,7 +51,7 @@ $menu = array(
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
-		<title><?php wp_title('|', true, 'right'); ?></title>
+		<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/tipss.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">

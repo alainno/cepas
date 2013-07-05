@@ -6,6 +6,7 @@ define('PAGE_APPAM', 44);
 define('PAGE_TARPUY', 46);
 define('PAGE_CONTACTO', 50);
 define('PAGE_UBICACION', 188);
+define('PAGE_TIENDA', 5);
 
 define('CATE_NOTICIAS', 2);
 define('CATE_MULTIMEDIA', 3);

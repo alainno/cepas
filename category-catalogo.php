@@ -1,11 +1,16 @@
 <?php
 get_header();
+
+//$posts_per_page = $paged > 0 ? 9 : 3;
+$posts_per_page = 9;
+
 query_posts(array(
-	'posts_per_page' => 9
+	'posts_per_page' => $posts_per_page
 	,'paged' => $paged
 	,'meta_key' => '_thumbnail_id'
 	,'cat' => CATE_CATALOGO
 ));
+
 ?>
 <div class="clearer">
     <div class="main-col left">
@@ -31,7 +36,18 @@ query_posts(array(
 		<!--                    </ul>
 						</nav>
 					</div>-->
-		<div class="productolist">
+		<?php
+		
+		if($paged == 0):
+		
+		$page_tienda = get_page(PAGE_TIENDA);
+		
+		?>
+		<article>
+			<?php echo $page_tienda->post_content; ?>
+		</article>
+		<?php endif; ?>
+		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
 			<div class="clearer">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					<div class="product left">
@@ -56,4 +72,7 @@ query_posts(array(
 </div>
 <?php
 get_footer();
+
+//wp_reset_query();
+
 ?>

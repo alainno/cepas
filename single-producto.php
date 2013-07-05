@@ -32,7 +32,12 @@ get_header();
                                 </nav>
                             </div>-->
                 <article class="producto">
-                        <h2><?php the_title(); ?></h2>
+                    <?php 
+                    $_precio = get_post_meta(get_the_ID());
+                        $precio = $_precio["Precio"][0];
+                    ?>
+                        <h2><?php the_title(); ?> <img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="142" height="25" /><p class="precio"><?php echo $precio; ?></p></h2>
+                        <div class="line-etiq"></div>
                         <?php
                         $post_id = get_the_ID();
                         $content = get_the_content();
@@ -73,8 +78,8 @@ get_header();
                             if($contador == 3){break;}
                         }
 
-                        $_precio = get_post_meta(get_the_ID());
-                        $precio = $_precio["Precio"][0];
+//                        $_precio = get_post_meta(get_the_ID());
+//                        $precio = $_precio["Precio"][0];
                         ?>
                         <div class="clearer">
                             <div class="left">
@@ -93,7 +98,6 @@ get_header();
                             </div>
                         </div>
                         <p><?php echo removeImages($content); ?></p>
-                        <p class="precio"><?php echo $precio; ?></p>
                 </article>
                 <div class="paginacion clearer mt15">
                     <div class="left"><?php next_post_link('%link', '&laquo; Anterior', true); ?></div>
