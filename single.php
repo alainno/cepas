@@ -36,7 +36,7 @@ get_header();
                                 $img_url = wp_get_attachment_image_src($img_id, 'full', true);
                             }
                             ?>
-                            <img src="<?php echo $img_url[0]; ?>" width="630" />
+                            <img src="<?php echo $img_url[0]; ?>" width="640" />
                             <?php the_content(); ?>
                             <?php
                         elseif ($category->cat_ID == CATE_AUDIO):
