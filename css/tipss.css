@@ -26,8 +26,15 @@ svg:not(:root){overflow:hidden}
 figure{margin:0}
 fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 legend{border:0;padding:0}
-
-input[type="submit"]{background-color: #F99916; background-image: -moz-linear-gradient(center bottom , #F99916 0%, #FFB44D 100%); border: 1px solid #9C9C9C; box-shadow: 1px 1px #F9C279 inset; line-height: 22px; border-radius: 4px; color: #fff; padding: 5px 8px; font-weight: bold;}
+.form-datos{border: 1px solid #f9c279; padding: 20px; height: 415px;}
+input[type="submit"]{background-color: #f9c279; line-height: 22px; color: #fff; padding: 7px 9px; font-weight: bold; border: none;}
+input[type="submit"]:hover{background-color: #f99916;}
+input[type="text"],input[type="password"],input[type="email"],div.box .input_text, .form-contacto .input_text,textarea,select{
+	background: #efefef; border: 1px solid #f9c279; width: 225px; padding: 2px 5px; height: 19px;
+}
+input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus,input[type="number"]:focus,textarea:focus{
+	background: #fff; border: 1px solid #f99916;
+}
 
 button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
 button,input{line-height:normal}
