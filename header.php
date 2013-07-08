@@ -48,6 +48,7 @@ $menu = array(
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="google-translate-customization" content="9469f04e442db77a-349bc6d4f32ea28c-gd82d1c255957198b-16"></meta>
 		<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/tipss.css">
@@ -83,6 +84,15 @@ $menu = array(
 									<li><a href="/webmail"><span class="icono-mail"></span>Webmail</a></li>
 									<li><a href="<?php echo get_page_link(PAGE_UBICACION); ?>"><span class="icono-mapa"></span>Ubicación</a></li>
 									<li><a href="<?php echo get_page_link(PAGE_CONTACTO); ?>"><span class="icono-globo"></span>Contáctenos</a></li>
+									<li>
+										<div id="google_translate_element" style="margin-top: -4px"></div>
+										<script type="text/javascript">
+										function googleTranslateElementInit() {
+										new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+										}
+										</script>
+										<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+									</li>
 								</ul>
 							</div>
 							<div class="accesos">
