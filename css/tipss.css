@@ -26,14 +26,17 @@ svg:not(:root){overflow:hidden}
 figure{margin:0}
 fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 legend{border:0;padding:0}
-.form-datos{border: 1px solid #f9c279; padding: 20px; height: 415px;}
-input[type="submit"]{background-color: #f9c279; line-height: 22px; color: #fff; padding: 7px 9px; font-weight: bold; border: none;}
-input[type="submit"]:hover{background-color: #f99916;}
+.form-datos{border: 1px solid #f9c279; padding: 20px 110px 20px 20px;}
+.form-datos p{text-align: right !important; margin: 10px 0 !important;}
+.form-datos p.tam-peq input{width: 150px !important;}
+
+input[type="submit"]{background-color: #f99916; line-height: 22px; color: #fff; padding: 8px 15px; font-weight: bold; border: none; margin-right: 147px}
+input[type="submit"]:hover{position: relative; top: -1px;}
 input[type="text"],input[type="password"],input[type="email"],div.box .input_text, .form-contacto .input_text,textarea,select{
-	background: #efefef; border: 1px solid #f9c279; width: 225px; padding: 2px 5px; height: 19px;
+	 border: 1px solid #f9c279; width: 225px; padding: 2px 5px; ;margin-left: 10px;
 }
 input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus,input[type="number"]:focus,textarea:focus{
-	background: #fff; border: 1px solid #f99916;
+	border: 1px solid #f99916;
 }
 
 button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
