@@ -168,7 +168,7 @@ a{color:#356AA0}
 .main-col .fecha{font-size: 12px;color: #7A3400;display: block;margin-bottom: 1em}
 .main-col p{line-height:1.5em;margin-top:.5em; text-align: justify;}
 /*.main-col .propiedades{width: 500px;}*/
-.main-col .link-volver{margin-bottom: 10px;}
+.main-col .link-volver{margin-bottom: 10px; margin-top: 25px;}
 .main-col .link-volver a{background: #f7d0a6; padding: 8px 7px 7px; color: #000; font-weight: bold; text-decoration: none;}
 .main-col .link-volver a:hover{background: #f99916;}
 .main-col .link-volver a img{margin-right: 5px; margin-bottom: -3px;}
