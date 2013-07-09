@@ -167,6 +167,12 @@ a{color:#356AA0}
 .main-col h2{font:16px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;margin-top: 0;text-transform: uppercase}
 .main-col .fecha{font-size: 12px;color: #7A3400;display: block;margin-bottom: 1em}
 .main-col p{line-height:1.5em;margin-top:.5em; text-align: justify;}
+/*.main-col .propiedades{width: 500px;}*/
+.main-col .link-volver{margin-bottom: 10px;}
+.main-col .link-volver a{background: #f7d0a6; padding: 8px 7px 7px; color: #000; font-weight: bold; text-decoration: none;}
+.main-col .link-volver a:hover{background: #f99916;}
+.main-col .link-volver a img{margin-right: 5px; margin-bottom: -3px;}
+.main-col .link-volver a span{}
 .main-col ul,.main-col ol{padding-left:28px;}
 .main-col ul li,.main-col ol li{padding-top:5px;line-height: 1.5em}
 .main-col figure,.main-col .wp-caption{position:relative;width:auto !important;}

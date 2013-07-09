@@ -11,7 +11,14 @@ get_header();
                 <article class="producto">
                     <?php 
 						$_precio = get_post_meta(get_the_ID());
+//                                                echo ('<pre>');
+//                                                var_dump($_precio);
+//                                                die();
                         $precio = $_precio["Precio"][0];
+                        $material = $_precio["Material"][0];
+                        $artesano = $_precio["Artesano"][0];
+                        $disponibilidad = $_precio["Disponibilidad"][0];
+                        
                     ?>
                         <h2>
 							<?php the_title(); ?>
@@ -24,6 +31,7 @@ get_header();
                         <?php
 						
                         $content = get_the_content();
+                        
 	
 						$inlineImages = array();
 						preg_match_all('/src="([^"]*)"/i', $content, $inlineImages);
@@ -55,11 +63,20 @@ get_header();
                             </div>							
                         </div>
                         <p><?php echo removeImages($content); ?></p>
+                        <div class="propiedades ">
+                            <p><strong>Material : </strong><?php echo $material;?></p>
+                            <p><strong>Artesano : </strong><?php echo $artesano;?></p>
+                            <p><strong>Stock : </strong><?php echo $disponibilidad;?></p>
+                        </div>
+                        <div class="link-volver">
+                            <a href="<?php echo get_category_link(9); ?>"><img id=" " src="<?php echo get_template_directory_uri(); ?>/img/flecha-volver.gif" class="" width="16" height="16" /><span>Volver a catálogo</span></a>
+                        </div>
                 </article>
                 <div class="paginacion clearer mt15">
                     <div class="left"><?php next_post_link('%link', '&laquo; Anterior', true); ?></div>
                     <div class="right"><?php previous_post_link('%link', 'Siguiente &raquo;', true); ?></div>
                 </div>
+                
                 <?php
             endwhile;
         endif;
