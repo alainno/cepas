@@ -69,7 +69,7 @@ get_header();
                             <p><strong>Stock : </strong><?php echo $disponibilidad;?></p>
                         </div>
                         <div class="link-volver">
-                            <a href="<?php echo get_category_link(9); ?>"><img id=" " src="<?php echo get_template_directory_uri(); ?>/img/flecha-volver.gif" class="" width="16" height="16" /><span>Volver a catálogo</span></a>
+                            <a href="<?php echo get_category_link(CATE_CATALOGO); ?>"><img id=" " src="<?php echo get_template_directory_uri(); ?>/img/flecha-volver.gif" class="" width="16" height="16" /><span>Volver a catálogo</span></a>
                         </div>
                 </article>
                 <div class="paginacion clearer mt15">
