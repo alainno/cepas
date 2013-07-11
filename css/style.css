@@ -42,7 +42,7 @@ a{color:#356AA0}
 .header .menu ul{background:#f99916;height:100%;}
 .header .menu ul li{border-left:1px solid #fff;float:left;}
 .header .menu ul li:first-child{border-left:none}
-.header .menu ul li a{color:#fff;padding:0 20px;display:inline-block;font:14px/38px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;text-decoration:none;text-transform:uppercase;text-shadow:1px 1px 2px #333;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;}
+.header .menu ul li a{color:#fff;padding:0 18px;display:inline-block;font:14px/38px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;text-decoration:none;text-transform:uppercase;text-shadow:1px 1px 2px #333;-webkit-transition:background .3s linear;-moz-transition:background .3s linear;-ms-transition:background .3s linear;-o-transition:background .3s linear;transition:background .3s linear;}
 .header .menu ul li a:hover,.header .menu ul li a.actual{background:#bb6c00}
 .cuerpo{padding:0 5px;}
 .cuerpo .slider-container{height:315px;position:relative;}
@@ -192,7 +192,8 @@ a{color:#356AA0}
 .lista-categoria article > a:hover{background: #fabe6c}
 .lista-categoria article img.alignleft{margin: 0 15px 0 0}
 .lista-categoria article h2
-,.lista-categoria article p{color: #000}
+,.lista-categoria article p{color: #000;line-height: 1.3em}
+.lista-categoria article h2{font-size: 18px;margin-bottom: .5em}
 .lista-categoria article p{margin-bottom: 0}
 .paginacion a{display: block;height: 30px;line-height: 30px;padding: 0 15px;font-weight: bold;font-size: 12px;color: #000;background: #FFE5C9;text-decoration: none}
 .paginacion a:hover{background: #fabe6c}

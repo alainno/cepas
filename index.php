@@ -14,7 +14,7 @@ get_header();
 				$img_url = wp_get_attachment_image_src($img_id, 'slide-size', true);
 		?>
 		<div class="slide"><img src="<?php echo $img_url[0]; ?>">
-			<p class="ttu"><?php echo $slide->post_title; ?>
+			<p class=""><?php echo $slide->post_title; ?>
 			</p>
 		</div>
 		<?php endforeach; ?>
@@ -39,7 +39,7 @@ get_header();
 			<p><?php echo resumen($page->post_content,25); ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_APPAM); ?>">
-			<h2><span class="icono-appam"></span>APPAM</h2>
+			<h2><span class="icono-appam"></span>APAAM</h2>
 			<?php $page = get_page(PAGE_APPAM); ?>
 			<p><?php echo resumen($page->post_content,25); ?></p></a>
 	</section>
@@ -146,7 +146,7 @@ get_header();
 			<div class="clearer mt5">
 				<section class="folletos left">
                     <header>
-						<h2 class="left">Folletos</h2>
+						<h2 class="left">Publicaciones</h2>
 						<!--<a href="#" class="icono-flecha right img-rpl">Más...</a>-->
                     </header>
                     <ul class="lista mt5">

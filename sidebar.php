@@ -24,7 +24,7 @@
 					</section>
 					<section class="mt10">
 						<header>
-							<h2 class="left">Folletos</h2>
+							<h2 class="left">Publicaciones</h2>
 						</header>
 						<ul class="lista mt5">
 							<?php

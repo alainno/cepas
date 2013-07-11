@@ -1,4 +1,10 @@
 <?php
+
+if(post_is_in_descendant_category(CATE_MULTIMEDIA)){
+	include (TEMPLATEPATH . '/category-multimedia.php'); 
+	exit;
+}
+
 get_header();
 ?>
 <div class="clearer">
@@ -12,20 +18,13 @@ get_header();
 							<div class="clearer">
 								<?php
 								$category = get_category(get_query_var('cat'));
-								/* if($category->cat_ID == CATE_MULTIMEDIA):
-								  preg_match('/\/v\/(.{11})|\/embed\/(.{11})/',get_the_content(),$matches);
-								  //print_r($matches);
-								  ?>
-								  <img src="http://img.youtube.com/vi/<?php echo $matches[2]; ?>/1.jpg" width="120" height="90" class="alignleft" />
-								  <?php */
 								$number_words = 40;
-
+								$show_more = true;
 								if ($category->cat_ID == CATE_NOTICIAS && has_post_thumbnail()):
 									$thumb_id = get_post_thumbnail_id();
 									$thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
 									?>
 									<img src="<?php echo $thumb_url[0]; ?>" class="alignleft" width="150" height="150" />
-
 									<?php
 								elseif ($category->cat_ID == CATE_CATALOGO && has_post_thumbnail()):
 									$thumb_id = get_post_thumbnail_id();
@@ -34,9 +33,8 @@ get_header();
 									<img src="<?php echo $thumb_url[0]; ?>" class="alignleft" width="187" height="120" />
 									<?php
 								elseif ($category->cat_ID == CATE_MULTIMEDIA):
-
-									//echo get_the_ID();
 									$number_words = 5;
+									$show_more = false;
 
 									$categories = wp_get_post_categories(get_the_ID());
 									if (in_array(CATE_FOTO, $categories)) {
@@ -51,12 +49,18 @@ get_header();
 									}
 									?>
 									<img src="<?php echo $img_url; ?>" class="alignleft" width="115" height="80" />
+									
 									<?php
 								endif;
 								?>
 								<h2><?php the_title(); ?></h2>
 								<span class="fecha"><?php the_time('l, j \d\e F \d\e\l Y'); ?></span>
-								<p><?php echo resumen(get_the_content(), $number_words); ?></p>
+								<p>
+									<?php echo resumen(get_the_content(), $number_words); ?>
+									<?php if($show_more): ?>
+									<strong>Leer&nbsp;más&nbsp;&raquo;</strong>
+									<?php endif; ?>
+								</p>
 							</div></a>
 					</article>
 					<?php
