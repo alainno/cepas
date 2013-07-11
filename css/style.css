@@ -145,6 +145,8 @@ a{color:#356AA0}
 .main-col article .imgs-children li img{margin: 0;display: block}
 
 /*div.imgs-children ul li img { width: 100px; height: 100px; cursor: pointer; }*/
+.main-col article .contacto-left{width: 315px; }
+.main-col article .contacto-right{width: 315px; }
 
 .main-col article .cpm-map{margin-bottom: 10px !important}
 
@@ -204,7 +206,7 @@ a{color:#356AA0}
 .right-col #slider-logos .slide div a:hover{background: #dedede}
 
 .wide-col{padding: 0 10px}
-.wide-col article p{margin: 0}
+.wide-col article p{line-height: 1.5em; margin-top: 0.5em; text-align: justify;}
 
 .footer{margin:0 5px;background:#2b2929;border-top:4px solid #000;padding:15px;color:#a1a1a1;}
 .footer div.left strong{color:#fff}
