@@ -32,7 +32,9 @@ legend{border:0;padding:0}
 .form-datos p.tam-peq input{width: 150px !important;}
 
 input[type="submit"]{background-color: #f99916; line-height: 22px; color: #fff; padding: 8px 15px; font-weight: bold; border: none; margin-right: 147px}
-input[type="submit"]:hover{position: relative; top: -1px;}
+
+input[type="submit"]:active{position:relative;top:1px}
+
 input[type="text"],input[type="password"],input[type="email"],div.box .input_text, .form-contacto .input_text,textarea,select{
 	 border: 1px solid #f9c279; width: 225px; padding: 2px 5px; ;margin-left: 10px !important;
 }
