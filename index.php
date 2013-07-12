@@ -41,13 +41,13 @@ get_header();
 	<section class="left"><a href="<?php echo get_page_link(PAGE_APPAM); ?>">
 			<h2><span class="icono-appam"></span>APAAM</h2>
 			<?php $page = get_page(PAGE_APPAM); ?>
-			<p><?php echo resumen($page->post_content,25); ?></p></a>
+			<p><?php echo resumen($page->post_content,29); ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TARPUY); ?>">
 			<h2><span class="icono-tarpuy"></span>TARPUY
 			</h2>
 			<?php $page = get_page(PAGE_TARPUY); ?>
-			<p><?php echo resumen($page->post_content,25); ?></p></a>
+			<p><?php echo resumen($page->post_content,21); ?></p></a>
 	</section>
 </div>
 <div class="secciones mt5">
