@@ -21,9 +21,32 @@ get_header();
 					<span><?php the_title(); ?></span>
 					<?php endif; ?>
 				</h1>
+
+				<?php if(isset($subpages)): ?>
+					<nav class="submenu clearer">
+						<ul>
+							<?php
+							foreach($subpages as $k => $subpage):
+							?>
+							<li class="<?php echo $k%4 == 0 ? 'first-col' : '',$k>3 ? ' second-row' : ''; ?>">
+								<a href="<?php echo get_page_link($subpage->ID); ?>" class="<?php echo $subpage->ID == $post->ID ? 'actual':''; ?>">&raquo; <?php echo $subpage->post_title; ?></a>
+							</li>
+							<?php
+							endforeach;
+							$total_subpages = $k + 1;
+							if($total_subpages>4):
+							$resto = 4 - $total_subpages%4;
+							for($i=0;$i<$resto;$i++):
+							?>
+							<li<?php echo $total_subpages>4?' class="second-row"':''; ?>></li>
+							<?php endfor; endif; ?>
+						</ul>
+					</nav>
+				<?php endif; ?>				
+				
 				<article>
 					<div class="clearer">
-						<?php if(isset($subpages)): ?>
+						<?php /*if(isset($subpages)): ?>
 					<nav class="submenu left">
 						<ul>
 							<?php
@@ -41,7 +64,7 @@ get_header();
 							?>
 						</ul>
 					</nav>
-						<?php endif; ?>
+						<?php endif;*/ ?>
 					
 					<?php the_content(); ?>
 					

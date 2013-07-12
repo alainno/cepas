@@ -153,6 +153,7 @@ a{color:#356AA0}
 .main-col article
 ,.wide-col article{padding: 20px;background:#ffe5c9}
 .main-col article ul li img:hover{background: #fabe6c}
+/*
 .main-col .submenu{background:#f99916;margin:0 20px 10px 0;width:160px;}
 .main-col .submenu ul{margin:0;padding:0;}
 .main-col .submenu ul li{list-style:none;border-top:1px solid #ffe5c9;padding:0;}
@@ -162,6 +163,17 @@ a{color:#356AA0}
 .main-col .submenu ul li a:hover span.right,.main-col .submenu ul li a.actual span.right{visibility:visible}
 .main-col .submenu ul li a span.right{background-position:-200px 0;margin:5px -15px 0 0;visibility:hidden}
 .main-col .submenu ul li a span.blanco{background-position:-240px 0;margin:5px -15px 0 0;visibility:hidden}
+*/
+
+.main-col .submenu{background:#ffc281;margin-bottom: 10px}
+.main-col .submenu ul{margin:0;padding:0;}
+.main-col .submenu ul li{float: left;list-style:none;padding:0;border-left:1px solid #fff;width: 166px;height: 30px}
+.main-col .submenu ul li.first-col{border-left:none;width: 169px;}
+.main-col .submenu ul li.second-row{border-top:1px solid #fff}
+.main-col .submenu ul li.last{border-right:1px solid #fff}
+.main-col .submenu ul li a{display: block;height:30px;line-height:30px;color:#000;text-decoration:none;font-weight:bold;text-align: center}
+.main-col .submenu ul li a:hover,.main-col .submenu ul li a.actual{background:#f99916;color: #fff}
+
 .main-col h1
 ,.wide-col h1{margin:0 0 0 -7px;font:28px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;line-height:30px;padding-bottom:20px;}
 .main-col h1 span

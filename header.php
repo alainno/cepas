@@ -29,7 +29,7 @@ $menu = array(
 	,'Mosoq Muhu' => array('link' => get_page_link(727), 'actual' => in_array(727,$actual_ids))
 	,'Noticias' => array('link' => get_category_link(CATE_NOTICIAS), 'actual' => $category->cat_ID == CATE_NOTICIAS)
 //	,'Enlaces' => array('link' => get_page_link(6), 'actual' => in_array(6,$actual_ids))
-	,'Multimedia' => array('link' => get_category_link(CATE_MULTIMEDIA), 'actual' => $category->cat_ID == CATE_MULTIMEDIA)
+	,'Multimedia' => array('link' => get_category_link(CATE_MULTIMEDIA), 'actual' => in_array($category->cat_ID, array(CATE_MULTIMEDIA,CATE_AUDIO,CATE_FOTO,CATE_VIDEO)))
 	,'Turismo' => array('link' => get_page_link(9), 'actual' => in_array(9,$actual_ids))
 	,'Donaciones' => array('link' => get_page_link(10), 'actual' => in_array(10,$actual_ids))
 );

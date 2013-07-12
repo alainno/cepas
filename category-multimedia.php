@@ -18,12 +18,14 @@ $subcategories = get_categories('child_of='.CATE_MULTIMEDIA.'&orderby=count&orde
 			<span><?php single_cat_title(); ?></span>
 		</h1>
 		
+		<nav class="submenu clearer">
 		<ul>
-			<li><a href="<?php echo get_category_link(CATE_MULTIMEDIA); ?>">Todos</a></li>
-		<?php foreach($subcategories as $subcategory): ?>
-			<li><a href="<?php echo get_category_link($subcategory->cat_ID); ?>"><?php echo $subcategory->name; ?></a></li>
-		<?php endforeach;?>
+			<li class="first-col"><a href="<?php echo get_category_link(CATE_MULTIMEDIA); ?>"<?php echo $category->cat_ID==CATE_MULTIMEDIA?' class="actual"':''; ?>>&raquo; Todos</a></li>
+			<?php foreach($subcategories as $subcategory): ?>
+			<li><a href="<?php echo get_category_link($subcategory->cat_ID); ?>"<?php echo $category->cat_ID==$subcategory->cat_ID?' class="actual"':''; ?>>&raquo; <?php echo $subcategory->name; ?></a></li>
+			<?php endforeach;?>
 		</ul>
+		</nav>
 		
 		<div class="lista-categoria">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
