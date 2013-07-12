@@ -99,9 +99,9 @@ $menu = array(
 							<div class="accesos">
 								<div class="banner-container left"><img src="<?php echo get_template_directory_uri(); ?>/img/banner.gif">
 								</div>
-								<form id="form-buscar" class="right">
-									<input type="text" placeholder="Buscar..." class="left">
-									<button type="submit" class="boton left ml5"><span class="icono-buscar"></span>
+								<form id="form-buscar" class="right" role="search" method="get" action="<?php echo home_url('/'); ?>">
+									<input type="text" placeholder="Buscar..." class="left" id="s" name="s" value="<?php echo get_search_query(); ?>">
+									<button type="submit" class="boton left ml5" id="searchsubmit"><span class="icono-buscar"></span>
 									</button>
 								</form>
 							</div>
