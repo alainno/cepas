@@ -246,6 +246,8 @@ a{color:#356AA0}
 .lt-ie9 .cuerpo .slider-container .slide p{background:transparent;-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2F98F16,endColorstr=#B2F98F16)";zoom:1}
 .lt-ie9 .cuerpo .slider-container .boton-next{background:transparent;-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)";zoom:1}
 .lt-ie9 .cuerpo .accesos section h2{background:transparent;-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000)";zoom:1}
-.lt-ie9 .cuerpo .accesos section a:hover>h2{-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF)";background:transpare/*table tr th, table tr td{border: 1px #F99916 solid;}*/
+.lt-ie9 .cuerpo .accesos section a:hover>h2{-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF)";background:transparent;zoom:1}
+
+/*table tr th, table tr td{border: 1px #F99916 solid;}*/
 table tr th{background: #BB6C00; color: #FFE5C9; font-weight: bold;}
 table tr td{color: #2d2d2d;}
