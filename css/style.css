@@ -248,6 +248,9 @@ a{color:#356AA0}
 .lt-ie9 .cuerpo .accesos section h2{background:transparent;-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000)";zoom:1}
 .lt-ie9 .cuerpo .accesos section a:hover>h2{-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF,endColorstr=#CCFFFFFF)";background:transparent;zoom:1}
 
-/*table tr th, table tr td{border: 1px #F99916 solid;}*/
-table tr th{background: #BB6C00; color: #FFE5C9; font-weight: bold;}
-table tr td{color: #2d2d2d;}
+article table{margin-bottom: 1em}
+article table tr th
+,article table tr td{border: 1px #F99916 solid}
+article table tr th{background: #BB6C00; color: #FFE5C9}
+article table tr td{color: #2d2d2d;}
+article td ul{margin: 0}

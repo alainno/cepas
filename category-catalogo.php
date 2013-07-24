@@ -44,7 +44,7 @@ query_posts(array(
 		
 		?>
 		<article>
-			<?php echo $page_tienda->post_content; ?>
+			<?php echo apply_filters('the_content', $page_tienda->post_content); ?>
 		</article>
 		<?php endif; ?>
 		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
