@@ -23,8 +23,8 @@ define('CATE_CATALOGO', 9);
 	add_image_size('portada-size', 440, 248, true);
 	add_image_size('scroll-size', 115, 80, true);
 	add_image_size('slide-size', 950, 315, true);
-	add_image_size('producto-size', 495, 420, true);
-	add_image_size('producto-thumb-size', 100, 100, true);
+	add_image_size('producto-size', 380, 320, true);
+	add_image_size('producto-thumb-size', 90, 90, true);
 
 	function resumen($texto, $limite=35, $puntos='...')
 	{
