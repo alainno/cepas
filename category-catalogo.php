@@ -1,19 +1,20 @@
 <?php
 get_header();
-
 $category = get_category(get_query_var('cat'));
+$cate_id = $category->cat_ID;
 
-//query_posts('posts_per_page=3');
+$a = $paged - 1;
 
-//$posts_per_page = $paged > 0 ? 9 : 3;
-/*$posts_per_page = 4;
+$posts_per_page = $paged == 0 ? 3 : 9;
+$offset = $paged == 0 ? 0 : ($a * $posts_per_page) - 6;
 
-$posts = query_posts(array(
-	'posts_per_page' => $posts_per_page
-	,'paged' => $paged
-	,'meta_key' => '_thumbnail_id'
-	,'cat' => $cate_id
-));*/
+$args = array(
+                'category' => $cate_id, 
+                'offset' => $offset, 
+                'posts_per_page' => $posts_per_page
+             );
+
+$cate_posts = get_posts($args);
 
 $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=desc');
 
@@ -67,18 +68,32 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
                 
 		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
 			<div class="clearer">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php
+//                            if (have_posts()): 
+//                                while (have_posts()):
+//                                    the_post();
+                            foreach($cate_posts as $cpost)
+                            {
+                                $post_id = $cpost->ID;
+                                $permalink = $cpost->guid;
+                                $title = $cpost->post_title;
+                                
+                        ?>
 					<div class="product left">
-						<a href="<?php the_permalink(); ?>">
+						<a href="<?php echo $permalink; ?>">
 							<?php
-							$thumb_id = get_post_thumbnail_id();
+							$thumb_id = get_post_thumbnail_id($post_id);
 							$thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
 							?>
 							<img src="<?php echo $thumb_url[0]; ?>" width="183" height="183" />
-							<p><?php the_title(); ?></p>
+							<p><?php echo $title; ?></p>
 						</a>
 					</div>
-			<?php endwhile; endif; ?>
+			<?php
+                            }
+//                                endwhile;
+//                            endif; 
+                        ?>
 			</div>
 		</div>
 		<div class="paginacion clearer mt15">
