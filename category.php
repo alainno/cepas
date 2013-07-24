@@ -5,6 +5,12 @@ if(post_is_in_descendant_category(CATE_MULTIMEDIA)){
 	exit;
 }
 
+if(post_is_in_descendant_category(CATE_CATALOGO))
+{
+    include (TEMPLATEPATH . '/category-catalogo.php'); 
+    exit;
+}
+
 get_header();
 ?>
 <div class="clearer">
