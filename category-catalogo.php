@@ -1,22 +1,30 @@
 <?php
 get_header();
 
-//$posts_per_page = $paged > 0 ? 9 : 3;
-$posts_per_page = 9;
+$category = get_category(get_query_var('cat'));
+$cate_id = $category->cat_ID;
 
-query_posts(array(
+//$posts_per_page = $paged > 0 ? 9 : 3;
+/*$posts_per_page = 4;
+
+$posts = query_posts(array(
 	'posts_per_page' => $posts_per_page
 	,'paged' => $paged
 	,'meta_key' => '_thumbnail_id'
-	,'cat' => CATE_CATALOGO
-));
+	,'cat' => $cate_id
+));*/
+
+$subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=desc');
 
 ?>
 <div class="clearer">
     <div class="main-col left">
         <h1>
-			<span><?php single_cat_title(); ?></span>
-		</h1>
+                <?php if($category->cat_ID != CATE_CATALOGO): ?>
+                Catalogo /
+                <?php endif; ?>
+                <span><?php single_cat_title(); ?></span>
+        </h1>
 		<!--            <div class="left-col left">
 						<nav class="submenu left">
 							<ul>-->
@@ -47,6 +55,16 @@ query_posts(array(
 			<?php echo $page_tienda->post_content; ?>
 		</article>
 		<?php endif; ?>
+                <br/>
+                <nav class="submenu clearer">
+                        <ul>
+                                <li class="first-col"><a href="<?php echo get_category_link(CATE_CATALOGO); ?>"<?php echo $category->cat_ID==CATE_CATALOGO?' class="actual"':''; ?>>&raquo; Todos</a></li>
+                                <?php foreach($subcategories as $subcategory): ?>
+                                <li><a href="<?php echo get_category_link($subcategory->cat_ID); ?>"<?php echo $category->cat_ID==$subcategory->cat_ID?' class="actual"':''; ?>>&raquo; <?php echo $subcategory->name; ?></a></li>
+                                <?php endforeach;?>
+                        </ul>
+		</nav>
+                
 		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
 			<div class="clearer">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

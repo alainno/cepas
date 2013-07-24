@@ -4,6 +4,7 @@ get_header();
 $category = get_category(get_query_var('cat'));
 
 $subcategories = get_categories('child_of='.CATE_MULTIMEDIA.'&orderby=count&order=desc');
+
 //echo '<pre>';
 //print_r($subcategories);
 //echo '</pre>';
