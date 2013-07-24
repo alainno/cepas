@@ -2,7 +2,8 @@
 get_header();
 
 $category = get_category(get_query_var('cat'));
-$cate_id = $category->cat_ID;
+
+//query_posts('posts_per_page=3');
 
 //$posts_per_page = $paged > 0 ? 9 : 3;
 /*$posts_per_page = 4;
