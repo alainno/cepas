@@ -52,7 +52,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		
 		?>
 		<article>
-			<?php echo $page_tienda->post_content; ?>
+			<?php echo apply_filters('the_content', $page_tienda->post_content); ?>
 		</article>
 		<?php endif; ?>
                 <br/>
