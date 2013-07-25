@@ -40,6 +40,11 @@ function main(){
 function cambiarImagen()
 {
     $this = $(this);
+    
+    $(".imgs-children ul li a.actual").removeClass('actual');
+
+    $this.addClass('actual');
+
     src = $this.attr("href");
     $("#img-cat-main").attr("src", src);
     return false;

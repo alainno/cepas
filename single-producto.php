@@ -46,7 +46,7 @@ get_header();
                             <div class="left">
                                 <img id="img-cat-main" src="<?php echo $first_image_src ?>" width="380" height="320" />
                             </div>
-                            <div class="imgs-children left">
+                            <div class="imgs-children left imgs-children-a">
                                 <ul>
                                     <?php
                                     foreach ($inlineImages[1] as $k => $image):
