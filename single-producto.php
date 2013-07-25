@@ -33,6 +33,13 @@ get_header();
 
                     $inlineImages = array();
                     preg_match_all('/src="([^"]*)"/i', $content, $inlineImages);
+                    
+                    $f_image = $inlineImages[1][0];
+                    $f_img_id = get_attachment_id_from_url($f_image);
+                    $f_image_src = wp_get_attachment_image_src($f_img_id, 'producto-size');
+                    $first_image_src = $f_image_src[0];
+                    //var_dump($first_image_src);
+                    
                     ?>
                     <div class="clearer">
                         <div class="left imgs">
