@@ -52,7 +52,7 @@ get_header();
                                         ?>
                                         <li><a href="<?php echo $image_src[0]; ?>"><img src="<?php echo $thumb_src[0]; ?>"/></a></li>
                                         <?php
-                                        if ($k >= 2) {
+                                        if ($k >= 6) {
                                             break;
                                         }
                                     endforeach;
