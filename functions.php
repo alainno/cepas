@@ -80,5 +80,22 @@ function post_is_in_descendant_category( $cats, $_post = null ){
     }
     return false;
 }
-	
+
+// Funcion para que se solucione el problema de la paginacion
+function cure_wp_amnesia_on_query_string($query_string)
+{
+    $lista_catalogo = array('9', '10', '11', '12');
+    
+    if(!is_admin())
+    {
+        if(isset($query_string['cat']) && in_array($query_string['cat'], $lista_catalogo))
+        {
+            $query_string['posts_per_page'] = 3;
+        }
+    }
+    
+    return $query_string;
+}
+
+add_filter('request', 'cure_wp_amnesia_on_query_string');	
 ?>
