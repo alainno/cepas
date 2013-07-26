@@ -6,29 +6,35 @@ $lista_catalogo = array('9', '10', '11', '12');
 $category = get_category(get_query_var('cat'));
 $cate_id = $category->cat_ID;
 
-$a = $paged - 1;
-
 $query = new WP_Query('cat=' . $cate_id);    
 $total_posts = $query->found_posts;
-$max_post_showed = ($a * 9) + 3;
 
-$posts_per_page = $paged == 0 ? 3 : 9;
-$offset = $paged == 0 ? 0 : ($a * $posts_per_page) - 6;
+$first_page = 3;
+$second_page = 9;
 
+$restante = $second_page - $first_page;
 
-//$posts_per_page = 3;
+//if($paged > 0)
+//{
+    $a = $paged - 1;
+    $max_post_showed = ($a * $second_page) + $first_page;
+    $posts_per_page = $paged == 0 ? $first_page : $second_page;
+//}
+
+$offset = $paged == 0 ? 0 : ($a * $posts_per_page) - $restante;
 
 $args = array(
                 'category' => $cate_id, 
                 'offset' => $offset, 
-                'posts_per_page' => $posts_per_page
+                'posts_per_page' => $posts_per_page, 
+                'paged' => $paged
              );
 
-//$cate_posts = get_posts($args);
+$cate_posts = get_posts($args);
 
-$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+//$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
-query_posts('category='.$cate_id.'&posts_per_page=3&paged=' . $paged);
+//query_posts('category='.$cate_id.'&paged=' . $paged);
 
 $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=desc');
 
@@ -61,7 +67,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 						</nav>
 					</div>-->
 		<?php
-		if($paged == 0):
+		if($paged == 0 && $cate_id == 9):
 		
 		$page_tienda = get_page(PAGE_TIENDA);
 		
@@ -83,14 +89,11 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
 			<div class="clearer">
 			<?php
-                            if (have_posts()): 
-                                while (have_posts()):
-                                    the_post();
-//                            foreach($cate_posts as $cpost)
-//                            {
-//                                $post_id = $cpost->ID;
-//                                $permalink = $cpost->guid;
-//                                $title = $cpost->post_title;
+                            foreach($cate_posts as $cpost)
+                            {
+                                $post_id = $cpost->ID;
+                                $permalink = $cpost->guid;
+                                $title = $cpost->post_title;
                                 
                         ?>
 					<div class="product left">
@@ -104,9 +107,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 						</a>
 					</div>
 			<?php
-                           // }
-                                endwhile;
-                            endif; 
+                            }
                         ?>
 			</div>
 		</div>
