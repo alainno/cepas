@@ -5,7 +5,7 @@ $lista_catalogo = array('9', '10', '11', '12');
 
 $category = get_category(get_query_var('cat'));
 $cate_id = $category->cat_ID;
-/*
+
 $a = $paged - 1;
 
 $query = new WP_Query('cat=' . $cate_id);    
@@ -14,13 +14,13 @@ $max_post_showed = ($a * 9) + 3;
 
 $posts_per_page = $paged == 0 ? 3 : 9;
 $offset = $paged == 0 ? 0 : ($a * $posts_per_page) - 6;
-*/
 
-$posts_per_page = 3;
+
+//$posts_per_page = 3;
 
 $args = array(
                 'category' => $cate_id, 
-                //'offset' => $offset, 
+                'offset' => $offset, 
                 'posts_per_page' => $posts_per_page
              );
 
