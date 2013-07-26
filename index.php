@@ -25,6 +25,7 @@ get_header();
 		<div class="wrapper-ext"><a href="<?php echo get_page_link(PAGE_GIES); ?>" class="wrapper-in"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-gies.png" alt="GIES Melgar"></a>
 		</div>
 	</section>
+	
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>">
 			<h2><span class="icono-tikary"></span>T'IKARIY</h2>
 			<?php $page = get_page(PAGE_TIKARIY); ?>
