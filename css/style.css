@@ -47,9 +47,9 @@ a{color:#356AA0}
 .cuerpo{padding:0 5px;}
 .cuerpo .slider-container{height:315px;position:relative;}
 .cuerpo .slider-container #slider{z-index:1}
-.cuerpo .slider-container .slide{position:absolute}
+.cuerpo .slider-container .slide{position:absolute;}
 .cuerpo .slider-container img{display:block}
-.cuerpo .slider-container p{position:absolute;left:0;bottom:25px;height:35px;padding:0 20px;background:rgba(249,143,22,0.70);font:20px/35px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;color:#fff}
+.cuerpo .slider-container p{position:absolute;left:0;bottom:25px;height:35px;padding:0 20px;background:rgba(249,143,22,0.70);font:18px/35px "Franklin Gothic Medium","Franklin Gothic","ITC Franklin Gothic",Arial,sans-serif;color:#fff}
 
 .cuerpo .slider-container .boton-prev{position:absolute;width:70px;height:50px;top:133px;left: 0;background:rgba(0,0,0,0.50);z-index:2;}
 .cuerpo .slider-container .boton-prev span{margin:0 0 0 10px; width:50px; height:50px;background-position:-200px -20px;opacity:.5}
@@ -60,7 +60,7 @@ a{color:#356AA0}
 
 .cuerpo .accesos{background:#e4d6cc;height:194px;margin-top:5px;padding:10px 0;}
 .cuerpo .accesos section{background:#ffe5c9;height:190px;margin-left:10px;width:221px;border:2px solid #fff;}
-/*.cuerpo .accesos section:first-child{border-color:#e4d6cc;background:none;}*/
+.cuerpo .accesos section:first-child{border-color:#e4d6cc;background:none;}
 .cuerpo .accesos section:first-child .wrapper-ext{height:100%;width:100%;display:table;}
 .cuerpo .accesos section:first-child .wrapper-ext .wrapper-in{display:table-cell;vertical-align:middle;opacity:.75;-webkit-transition:opacity .3s ease-out;-moz-transition:opacity .3s ease-out;-ms-transition:opacity .3s ease-out;-o-transition:opacity .3s ease-out;transition:opacity .3s ease-out;}
 .cuerpo .accesos section:first-child .wrapper-ext .wrapper-in:hover{opacity:1}
