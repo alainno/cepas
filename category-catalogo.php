@@ -67,7 +67,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 						</nav>
 					</div>-->
 		<?php
-		if($paged == 0):
+		if($paged == 0 && $cate_id == 9):
 		
 		$page_tienda = get_page(PAGE_TIENDA);
 		
