@@ -19,6 +19,7 @@ get_header();
 		</div>
 		<?php endforeach; ?>
 	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
+	<a href="#" id="prev" class="boton-prev"><span class="icono-flnext"></span></a>
 </div>
 <div class="accesos clearer">
 	<section class="left tac">
