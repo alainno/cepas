@@ -43,7 +43,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
     <div class="main-col left">
         <h1>
                 <?php if($category->cat_ID != CATE_CATALOGO): ?>
-                Catálogo /
+                Tienda Solidaria /
                 <?php endif; ?>
                 <span><?php single_cat_title(); ?></span>
         </h1>
@@ -67,7 +67,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 						</nav>
 					</div>-->
 		<?php
-		if($paged == 0 && $cate_id == 9):
+		if($paged == 0 && $cate_id == CATE_CATALOGO):
 		
 		$page_tienda = get_page(PAGE_TIENDA);
 		
