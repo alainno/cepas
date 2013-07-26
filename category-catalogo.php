@@ -14,12 +14,12 @@ $second_page = 9;
 
 $restante = $second_page - $first_page;
 
-if($paged > 0)
-{
+//if($paged > 0)
+//{
     $a = $paged - 1;
     $max_post_showed = ($a * $second_page) + $first_page;
     $posts_per_page = $paged == 0 ? $first_page : $second_page;
-}
+//}
 
 $offset = $paged == 0 ? 0 : ($a * $posts_per_page) - $restante;
 
@@ -89,14 +89,11 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
 			<div class="clearer">
 			<?php
-                            if (have_posts()): 
-                                while (have_posts()):
-                                    the_post();
-//                            foreach($cate_posts as $cpost)
-//                            {
-//                                $post_id = $cpost->ID;
-//                                $permalink = $cpost->guid;
-//                                $title = $cpost->post_title;
+                            foreach($cate_posts as $cpost)
+                            {
+                                $post_id = $cpost->ID;
+                                $permalink = $cpost->guid;
+                                $title = $cpost->post_title;
                                 
                         ?>
 					<div class="product left">
@@ -110,9 +107,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 						</a>
 					</div>
 			<?php
-                           // }
-                                endwhile;
-                            endif; 
+                            }
                         ?>
 			</div>
 		</div>
