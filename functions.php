@@ -26,7 +26,6 @@ add_image_size('slide-size', 950, 315, true);
 add_image_size('producto-size', 380, 320, true);
 add_image_size('producto-thumb-size', 46, 46, true);
 
-
 	function resumen($texto, $limite=35, $puntos='...')
 	{
 		eregi("(([^ ]* ?){0,$limite})(.*)", strip_tags($texto), $ars);
