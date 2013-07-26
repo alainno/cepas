@@ -21,30 +21,25 @@ get_header();
 	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
 </div>
 <div class="accesos clearer">
-<!--	<section class="left tac">
+	<section class="left tac">
 		<div class="wrapper-ext"><a href="<?php echo get_page_link(PAGE_GIES); ?>" class="wrapper-in"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-gies.png" alt="GIES Melgar"></a>
 		</div>
-	</section>-->
-	<section class="left"><a href="<?php echo get_page_link(PAGE_GIES); ?>">
-			<h2><span class="icono-gies"></span>GIES MELGAR</h2>
-			<?php $page = get_page(PAGE_GIES); ?>
-			<p><?php echo resumen($page->post_content,29); ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>">
 			<h2><span class="icono-tikary"></span>T'IKARIY</h2>
 			<?php $page = get_page(PAGE_TIKARIY); ?>
-			<p><?php echo resumen($page->post_content,25); ?></p></a>
+			<p><?php echo $page->post_excerpt; ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_APPAM); ?>">
 			<h2><span class="icono-appam"></span>APAAM</h2>
 			<?php $page = get_page(PAGE_APPAM); ?>
-			<p><?php echo resumen($page->post_content,29); ?></p></a>
+			<p><?php echo $page->post_excerpt; ?></p></a>
 	</section>
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TARPUY); ?>">
 			<h2><span class="icono-tarpuy"></span>TARPUY
 			</h2>
 			<?php $page = get_page(PAGE_TARPUY); ?>
-			<p><?php echo resumen($page->post_content,21); ?></p></a>
+			<p><?php echo $page->post_excerpt; ?></p></a>
 	</section>
 </div>
 <div class="secciones mt5">

@@ -1,20 +1,28 @@
 <?php
 get_header();
+
 $category = get_category(get_query_var('cat'));
 $cate_id = $category->cat_ID;
-
+/*
 $a = $paged - 1;
 
 $posts_per_page = $paged == 0 ? 3 : 9;
 $offset = $paged == 0 ? 0 : ($a * $posts_per_page) - 6;
+*/
+
+$posts_per_page = 3;
 
 $args = array(
                 'category' => $cate_id, 
-                'offset' => $offset, 
+                //'offset' => $offset, 
                 'posts_per_page' => $posts_per_page
              );
 
-$cate_posts = get_posts($args);
+//$cate_posts = get_posts($args);
+
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+query_posts('category='.$cate_id.'&posts_per_page=3&paged=' . $paged);
 
 $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=desc');
 
@@ -23,7 +31,7 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
     <div class="main-col left">
         <h1>
                 <?php if($category->cat_ID != CATE_CATALOGO): ?>
-                Catalogo /
+                Catálogo /
                 <?php endif; ?>
                 <span><?php single_cat_title(); ?></span>
         </h1>
@@ -55,8 +63,8 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		<article>
 			<?php echo apply_filters('the_content', $page_tienda->post_content); ?>
 		</article>
+		<div class="mt20"></div>
 		<?php endif; ?>
-                <br/>
                 <nav class="submenu clearer">
                         <ul>
                                 <li class="first-col"><a href="<?php echo get_category_link(CATE_CATALOGO); ?>"<?php echo $category->cat_ID==CATE_CATALOGO?' class="actual"':''; ?>>&raquo; Todos</a></li>
@@ -69,14 +77,14 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		<div class="productolist<?php echo $paged==0?' mt0':''; ?>">
 			<div class="clearer">
 			<?php
-//                            if (have_posts()): 
-//                                while (have_posts()):
-//                                    the_post();
-                            foreach($cate_posts as $cpost)
-                            {
-                                $post_id = $cpost->ID;
-                                $permalink = $cpost->guid;
-                                $title = $cpost->post_title;
+                            if (have_posts()): 
+                                while (have_posts()):
+                                    the_post();
+//                            foreach($cate_posts as $cpost)
+//                            {
+//                                $post_id = $cpost->ID;
+//                                $permalink = $cpost->guid;
+//                                $title = $cpost->post_title;
                                 
                         ?>
 					<div class="product left">
@@ -90,9 +98,9 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 						</a>
 					</div>
 			<?php
-                            }
-//                                endwhile;
-//                            endif; 
+                           // }
+                                endwhile;
+                            endif; 
                         ?>
 			</div>
 		</div>
