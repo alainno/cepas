@@ -26,14 +26,15 @@ $offset = $paged == 0 ? 0 : ($a * $posts_per_page) - $restante;
 $args = array(
                 'category' => $cate_id, 
                 'offset' => $offset, 
-                'posts_per_page' => $posts_per_page
+                'posts_per_page' => $posts_per_page, 
+                'paged' => $paged
              );
 
 $cate_posts = get_posts($args);
 
 //$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
-query_posts('category='.$cate_id.'&posts_per_page=3&paged=' . $paged);
+//query_posts('category='.$cate_id.'&paged=' . $paged);
 
 $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=desc');
 
