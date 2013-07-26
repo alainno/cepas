@@ -32,7 +32,7 @@
 					</li>
 					<li><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>">T'ikariy</a>
 					</li>
-					<li><a href="<?php echo get_page_link(PAGE_APPAM); ?>">APPAM</a>
+					<li><a href="<?php echo get_page_link(PAGE_APPAM); ?>">APAAM</a>
 					</li>
 					<li><a href="<?php echo get_page_link(PAGE_TARPUY); ?>">Tarpuy</a>
 					</li>

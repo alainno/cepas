@@ -18,14 +18,6 @@ get_header();
 			</p>
 		</div>
 		<?php endforeach; ?>
-<!--		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide2.jpg">
-			<p class="ttu">Artesanía Ecológica APPAM
-			</p>
-		</div>
-		<div class="slide"><img src="<?php echo get_template_directory_uri(); ?>/img/tmp-slide3.jpg">
-			<p class="ttu">Microcine Tarpuy
-			</p>
-		</div>-->
 	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
 </div>
 <div class="accesos clearer">
@@ -72,7 +64,8 @@ get_header();
 						<span class="fecha"><?php echo get_the_time('l, j \d\e F \d\e\l Y',$recent['ID']); ?></span>
 						<?php
 							if(has_post_thumbnail($recent['ID'])):
-								$big_array = image_downsize(get_post_thumbnail_id($recent['ID']), 'portada-size');
+//								$big_array = image_downsize(get_post_thumbnail_id($recent['ID']), 'portada-size');
+								$big_array = wp_get_attachment_image_src(get_post_thumbnail_id($recent['ID']), 'portada-size');
 								$img_url = $big_array[0];
 						?>
 						<div class="foto mt5">
