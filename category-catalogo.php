@@ -1,9 +1,16 @@
 <?php
 get_header();
+
+$lista_catalogo = array('9', '10', '11', '12');
+
 $category = get_category(get_query_var('cat'));
 $cate_id = $category->cat_ID;
 
 $a = $paged - 1;
+
+$query = new WP_Query('cat=' . $cate_id);    
+$total_posts = $query->found_posts;
+$max_post_showed = ($a * 9) + 3;
 
 $posts_per_page = $paged == 0 ? 3 : 9;
 $offset = $paged == 0 ? 0 : ($a * $posts_per_page) - 6;
@@ -98,7 +105,18 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		</div>
 		<div class="paginacion clearer mt15">
 			<div class="left"><?php previous_posts_link('&laquo; Anterior'); ?></div>
+                        
+                        <?php
+                        if(in_array($cate_id, $lista_catalogo))
+                        {
+                            if($total_posts > $max_post_showed)
+                            {
+                        ?>
 			<div class="right"><?php next_posts_link('Siguiente &raquo;'); ?></div>
+                        <?php
+                            }
+                        }
+                        ?>
 		</div>
     </div>
 	<?php get_sidebar(); ?>
