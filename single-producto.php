@@ -33,13 +33,20 @@ get_header();
 
                     $inlineImages = array();
                     preg_match_all('/src="([^"]*)"/i', $content, $inlineImages);
+                    
+                    $f_image = $inlineImages[1][0];
+                    $f_img_id = get_attachment_id_from_url($f_image);
+                    $f_image_src = wp_get_attachment_image_src($f_img_id, 'producto-size');
+                    $first_image_src = $f_image_src[0];
+                    //var_dump($first_image_src);
+                    
                     ?>
                     <div class="clearer">
                         <div class="left imgs">
                             <div class="left">
                                 <img id="img-cat-main" src="<?php echo $first_image_src ?>" width="380" height="320" />
                             </div>
-                            <div class="imgs-children left">
+                            <div class="imgs-children left imgs-children-a">
                                 <ul>
                                     <?php
                                     foreach ($inlineImages[1] as $k => $image):
@@ -52,7 +59,7 @@ get_header();
                                         ?>
                                         <li><a href="<?php echo $image_src[0]; ?>"><img src="<?php echo $thumb_src[0]; ?>"/></a></li>
                                         <?php
-                                        if ($k >= 2) {
+                                        if ($k >= 6) {
                                             break;
                                         }
                                     endforeach;

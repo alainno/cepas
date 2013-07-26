@@ -2,7 +2,7 @@ $(document).ready(main);
 
 function main(){
 	// slider
-	$('#slider').cycle({fx:'fadeZoom',next:'#next'});
+	$('#slider').cycle({fx:'fadeZoom',next:'#next',prev:'#prev'});
 	
 	// scroller
 	if($('.scroller').length > 0){
@@ -35,11 +35,17 @@ function main(){
 	
 	/* Tienda - Catalogo */
 	$(".imgs-children ul li a").click(cambiarImagen);
+        $(".imgs-children ul li a").first().addClass('actual');
 }
 
 function cambiarImagen()
 {
     $this = $(this);
+    
+    $(".imgs-children ul li a.actual").removeClass('actual');
+
+    $this.addClass('actual');
+
     src = $this.attr("href");
     $("#img-cat-main").attr("src", src);
     return false;
