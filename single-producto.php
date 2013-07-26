@@ -18,6 +18,7 @@ get_header();
                     $material = $_precio["Material"][0];
                     $artesano = $_precio["Artesano"][0];
                     $disponibilidad = $_precio["Disponibilidad"][0];
+                    $procedencia = $_precio["Procedencia"][0];
                     ?>
                     <h2>
                         <?php the_title(); ?>
@@ -74,6 +75,7 @@ get_header();
                             <p><strong>Material : </strong><?php echo $material; ?></p>
                             <p><strong>Artesano : </strong><?php echo $artesano; ?></p>
                             <p><strong>Stock : </strong><?php echo $disponibilidad; ?></p>
+                            <p><strong>Procedencia : </strong><?php echo $procedencia; ?></p>
                         </div>  
                     </div>
                     </div>
