@@ -26,13 +26,16 @@ get_header();
 			<p class="ttu">Microcine Tarpuy
 			</p>
 		</div>-->
-	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
+	</div>
+        <a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
+        <a href="#" id="prev" class="boton-prev"><span class="icono-flnext"></span></a>
 </div>
 <div class="accesos clearer">
 	<section class="left tac">
 		<div class="wrapper-ext"><a href="<?php echo get_page_link(PAGE_GIES); ?>" class="wrapper-in"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-gies.png" alt="GIES Melgar"></a>
 		</div>
 	</section>
+	
 	<section class="left"><a href="<?php echo get_page_link(PAGE_TIKARIY); ?>">
 			<h2><span class="icono-tikary"></span>T'IKARIY</h2>
 			<?php $page = get_page(PAGE_TIKARIY); ?>
