@@ -40,10 +40,6 @@ get_header();
                     $aux = wp_get_attachment_image_src(get_post_thumbnail_id(), 'producto-thumb-size');
                     $img_thumb_dest = $aux[0];
                     
-                    $imgurl = $imgdata[0]; // UTL
-                    $imgwidth = $imgdata[1]; // anchura
-                    $imgheight = $imgdata[2]; // altura
-                    
                     $f_image = $inlineImages[1][0];
                     $f_img_id = get_attachment_id_from_url($f_image);
                     $f_image_src = wp_get_attachment_image_src($f_img_id, 'producto-size');
@@ -54,7 +50,7 @@ get_header();
                     <div class="clearer">
                         <div class="left imgs">
                             <div class="left">
-                                <img id="img-cat-main" src="<?php echo $first_image_src ?>" width="380" height="320" />
+                                <img id="img-cat-main" src="<?php echo $img_dest; ?>" width="380" height="320" />
                             </div>
                             <div class="imgs-children left imgs-children-a">
                                 <ul>
