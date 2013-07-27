@@ -9,14 +9,22 @@ $cate_id = $category->cat_ID;
 $query = new WP_Query('cat=' . $cate_id);    
 $total_posts = $query->found_posts;
 
-$first_page = 3;
+if($cate_id == 9)
+{
+    $first_page = 3;
+}
+else
+{
+    $first_page = 9;
+}
+
 $second_page = 9;
 
 $restante = $second_page - $first_page;
 
 //if($paged > 0)
 //{
-    $a = $paged - 1;
+    $a = $paged == 0 ? 0 : $paged - 1;
     $max_post_showed = ($a * $second_page) + $first_page;
     $posts_per_page = $paged == 0 ? $first_page : $second_page;
 //}
