@@ -35,6 +35,12 @@ get_header();
                     $inlineImages = array();
                     preg_match_all('/src="([^"]*)"/i', $content, $inlineImages);
                     
+                    $aux = wp_get_attachment_image_src(get_post_thumbnail_id(), 'producto-size');
+                    $img_dest = $aux[0];
+                    
+                    $aux = wp_get_attachment_image_src(get_post_thumbnail_id(), 'producto-thumb-size');
+                    $img_thumb_dest = $aux[0];
+                    
                     $f_image = $inlineImages[1][0];
                     $f_img_id = get_attachment_id_from_url($f_image);
                     $f_image_src = wp_get_attachment_image_src($f_img_id, 'producto-size');
@@ -45,10 +51,11 @@ get_header();
                     <div class="clearer">
                         <div class="left imgs">
                             <div class="left">
-                                <img id="img-cat-main" src="<?php echo $first_image_src ?>" width="380" height="320" />
+                                <img id="img-cat-main" src="<?php echo $img_dest; ?>" width="380" height="320" />
                             </div>
                             <div class="imgs-children left imgs-children-a">
                                 <ul>
+                                    <li><a href="<?php echo $img_dest; ?>"><img src="<?php echo $img_thumb_dest; ?>"/></a></li>
                                     <?php
                                     foreach ($inlineImages[1] as $k => $image):
                                         $img_id = get_attachment_id_from_url($image);

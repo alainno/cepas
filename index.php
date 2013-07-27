@@ -18,9 +18,8 @@ get_header();
 			<p class=""><?php echo preg_replace('/(.+):/','<span>$1:</span>',$slide->post_title); ?></p>
 		</div>
 		<?php endforeach; ?>
-	</div>
-	<a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
-	<div id="slidenav"></div>
+	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
+	<a href="#" id="prev" class="boton-prev"><span class="icono-flnext"></span></a>
 </div>
 <div class="accesos clearer">
 	<section class="left tac">
