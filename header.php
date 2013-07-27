@@ -25,7 +25,7 @@ if(is_category()){
 $menu = array(
 	'Nuestra Institución' => array('link' => get_page_link(533), 'actual' => in_array(2,$actual_ids)) 
 //	,'Tienda Solidaria' => array('link' => get_page_link(5), 'actual' => in_array(5,$actual_ids))
-	,'Tienda Solidaria' => array('link' => get_category_link(CATE_CATALOGO), 'actual' => $category->cat_ID == CATE_CATALOGO)
+	,'Tienda Solidaria' => array('link' => get_category_link(CATE_CATALOGO), 'actual' => in_array($category->cat_ID, array(CATE_CATALOGO,10,11,12)))
 	,'Mosoq Muhu' => array('link' => get_page_link(727), 'actual' => in_array(727,$actual_ids))
 	,'Noticias' => array('link' => get_category_link(CATE_NOTICIAS), 'actual' => $category->cat_ID == CATE_NOTICIAS)
 //	,'Enlaces' => array('link' => get_page_link(6), 'actual' => in_array(6,$actual_ids))

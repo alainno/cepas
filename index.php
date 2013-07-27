@@ -13,12 +13,14 @@ get_header();
 				$img_id = get_post_thumbnail_id($slide->ID);
 				$img_url = wp_get_attachment_image_src($img_id, 'slide-size', true);
 		?>
-		<div class="slide"><img src="<?php echo $img_url[0]; ?>">
-			<p class=""><?php echo $slide->post_title; ?>
-			</p>
+		<div class="slide">
+			<img src="<?php echo $img_url[0]; ?>">
+			<p class=""><?php echo preg_replace('/(.+):/','<span>$1:</span>',$slide->post_title); ?></p>
 		</div>
 		<?php endforeach; ?>
-	</div><a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
+	</div>
+	<a href="#" id="next" class="boton-next"><span class="icono-flnext"></span></a>
+	<div id="slidenav"></div>
 </div>
 <div class="accesos clearer">
 	<section class="left tac">
@@ -141,7 +143,7 @@ get_header();
 				<section class="folletos left">
                     <header>
 						<h2 class="left">Publicaciones</h2>
-						<!--<a href="#" class="icono-flecha right img-rpl">Más...</a>-->
+						<a href="<?php echo get_category_link(CATE_FOLLETOS); ?>" class="icono-flecha right img-rpl">Más...</a>
                     </header>
                     <ul class="lista mt5">
 						<?php
