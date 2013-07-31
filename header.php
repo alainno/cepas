@@ -51,6 +51,7 @@ $menu = array(
 		<meta name="viewport" content="width=device-width" />
 		<meta name="google-translate-customization" content="9469f04e442db77a-349bc6d4f32ea28c-gd82d1c255957198b-16"></meta>
 		<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+		<meta name="description" value="<?php bloginfo('description'); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/tipss.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
