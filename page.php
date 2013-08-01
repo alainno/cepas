@@ -34,7 +34,7 @@ get_header();
 							<?php
 							endforeach;
 							$total_subpages = $k + 1;
-							if($total_subpages>4):
+							if($total_subpages%4 > 0):
 							$resto = 4 - $total_subpages%4;
 							for($i=0;$i<$resto;$i++):
 							?>
