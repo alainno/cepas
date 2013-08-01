@@ -25,6 +25,7 @@
 					<section class="mt10">
 						<header>
 							<h2 class="left">Publicaciones</h2>
+							<a href="<?php echo get_category_link(CATE_FOLLETOS); ?>" class="icono-flecha right img-rpl">Más...</a>
 						</header>
 						<ul class="lista mt5">
 							<?php

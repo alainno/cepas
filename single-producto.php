@@ -10,14 +10,24 @@ get_header();
                 </h1>
                 <article class="producto">
                     <?php
-                    $_precio = get_post_meta(get_the_ID());
+                    $_campos = get_post_meta(get_the_ID());
+
 //                                                echo ('<pre>');
 //                                                var_dump($_precio);
 //                                                die();
-                    $precio = $_precio["Precio"][0];
-                    $material = $_precio["Material"][0];
-                    $artesano = $_precio["Artesano"][0];
-                    $disponibilidad = $_precio["Disponibilidad"][0];
+                    
+                    /*$precio = $_campos["Precio"][0];
+                    $material = $_campos["Material"][0];
+                    $artesano = $_campos["Artesano"][0];
+                    $disponibilidad = $_campos["Disponibilidad"][0];
+                    $procedencia = $_campos["Procedencia"][0];*/
+                    
+                    $talla = $_campos['talla'][0];
+                    $codigo = $_campos['codigo'][0];
+                    $material = $_campos['material'][0];
+                    $base = $_campos['base_artesanal'][0];
+                    $descripcion = $_campos['descripcion'][0];
+                    
                     ?>
                     <h2>
                         <?php the_title(); ?>
@@ -77,10 +87,19 @@ get_header();
 
 <div class="right letras">
                         <p><?php echo removeImages($content); ?></p>
-                        <div class="propiedades ">
+<!--                        <div class="propiedades ">
                             <p><strong>Material : </strong><?php echo $material; ?></p>
                             <p><strong>Artesano : </strong><?php echo $artesano; ?></p>
                             <p><strong>Stock : </strong><?php echo $disponibilidad; ?></p>
+                            <p><strong>Procedencia : </strong><?php echo $procedencia; ?></p>
+                        </div>-->
+                        
+                        <div class="propiedades ">
+                            <p><strong>Material : </strong><?php echo $material; ?></p>
+                            <p><strong>Talla : </strong><?php echo $talla; ?></p>
+                            <p><strong>Descripción : </strong><?php echo $descripcion; ?></p>
+                            <p><strong>Base Artesanal : </strong><?php echo $base; ?></p>
+                            <p><strong>Código : </strong><?php echo $codigo; ?></p>
                         </div>  
                     </div>
                     </div>

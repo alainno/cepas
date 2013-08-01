@@ -2,7 +2,7 @@ $(document).ready(main);
 
 function main(){
 	// slider
-	$('#slider').cycle({fx:'fadeZoom',next:'#next',prev:'#prev'});
+	$('#slider').cycle({fx:'fadeZoom',next:'#next',prev:'#prev',pager:'#slidenav'});
 	
 	// scroller
 	if($('.scroller').length > 0){

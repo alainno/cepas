@@ -25,7 +25,7 @@ if(is_category()){
 $menu = array(
 	'Nuestra Institución' => array('link' => get_page_link(533), 'actual' => in_array(2,$actual_ids)) 
 //	,'Tienda Solidaria' => array('link' => get_page_link(5), 'actual' => in_array(5,$actual_ids))
-	,'Tienda Solidaria' => array('link' => get_category_link(CATE_CATALOGO), 'actual' => $category->cat_ID == CATE_CATALOGO)
+	,'Tienda Solidaria' => array('link' => get_category_link(CATE_CATALOGO), 'actual' => in_array($category->cat_ID, array(CATE_CATALOGO,10,11,12)))
 	,'Mosoq Muhu' => array('link' => get_page_link(727), 'actual' => in_array(727,$actual_ids))
 	,'Noticias' => array('link' => get_category_link(CATE_NOTICIAS), 'actual' => $category->cat_ID == CATE_NOTICIAS)
 //	,'Enlaces' => array('link' => get_page_link(6), 'actual' => in_array(6,$actual_ids))
@@ -51,6 +51,7 @@ $menu = array(
 		<meta name="viewport" content="width=device-width" />
 		<meta name="google-translate-customization" content="9469f04e442db77a-349bc6d4f32ea28c-gd82d1c255957198b-16"></meta>
 		<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+		<meta name="description" value="<?php bloginfo('description'); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/tipss.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
@@ -89,7 +90,7 @@ $menu = array(
 										<div id="google_translate_element" style="margin-top: -4px"></div>
 										<script type="text/javascript">
 										function googleTranslateElementInit() {
-										new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+										new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,it,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 										}
 										</script>
 										<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
