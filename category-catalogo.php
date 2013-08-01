@@ -85,6 +85,8 @@ $subcategories = get_categories('child_of='.CATE_CATALOGO.'&orderby=count&order=
 		</article>
 		<div class="mt20"></div>
 		<?php endif; ?>
+                                
+                
                 <nav class="submenu clearer">
                         <ul>
                                 <li class="first-col"><a href="<?php echo get_category_link(CATE_CATALOGO); ?>"<?php echo $category->cat_ID==CATE_CATALOGO?' class="actual"':''; ?>>&raquo; Todos</a></li>
