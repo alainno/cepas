@@ -55,6 +55,7 @@ $menu = array(
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/tipss.css">
 		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/plugins/jquery-ui.css">
 		<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr-2.6.2.min.js"></script>
 		<?php wp_head(); ?>
 	</head>

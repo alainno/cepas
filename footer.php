@@ -73,11 +73,14 @@
 </footer>
 </div>
 </div>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.9.1.minasd.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-1.9.1.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/plugins/jquery-ui.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.cycle.all.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.tscroller.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/plugins.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+<hr/>
 <?php wp_footer(); ?>
+<hr/>
 </body>
 </html>
