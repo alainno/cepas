@@ -38,8 +38,9 @@ get_header();
                     </h2>
                     <div class="line-etiq"></div>
                     <?php
-                    $content = get_the_content();
-
+					$content = apply_filters('the_content', get_the_content());
+					$content = removeLinks($content);
+					$content = removeImages($content);
 
                     $inlineImages = array();
                     preg_match_all('/src="([^"]*)"/i', $content, $inlineImages);
@@ -85,14 +86,8 @@ get_header();
                             </div>
                         </div>
 
-<div class="right letras">
-                        <p><?php echo removeImages($content); ?></p>
-<!--                        <div class="propiedades ">
-                            <p><strong>Material : </strong><?php echo $material; ?></p>
-                            <p><strong>Artesano : </strong><?php echo $artesano; ?></p>
-                            <p><strong>Stock : </strong><?php echo $disponibilidad; ?></p>
-                            <p><strong>Procedencia : </strong><?php echo $procedencia; ?></p>
-                        </div>-->
+					<div class="right letras">
+                        <?php echo $content; ?>
                         
                         <div class="propiedades ">
                             <p><strong>Material : </strong><?php echo $material; ?></p>

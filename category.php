@@ -24,11 +24,14 @@ get_header();
 							<div class="clearer">
 								<?php
 								$category = get_category(get_query_var('cat'));
-								if ($category->cat_ID == CATE_NOTICIAS && has_post_thumbnail()):
-									$thumb_id = get_post_thumbnail_id();
-									$thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+								if ($category->cat_ID == CATE_NOTICIAS):
+									
+									if(has_post_thumbnail()):
+										$thumb_id = get_post_thumbnail_id();
+										$thumb_url = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
 								?>
 									<img src="<?php echo $thumb_url[0]; ?>" class="alignleft" width="150" height="150" />
+									<?php endif; ?>
 									<h2><?php the_title(); ?></h2>
 									<span class="fecha"><?php the_time('l, j \d\e F \d\e\l Y'); ?></span>									
 									<p>
