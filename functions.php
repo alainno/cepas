@@ -43,6 +43,12 @@ define('CATE_CATALOGO', 9);
 	   return preg_replace('/<img[^>]+./','',$content);
 	}
 	
+	function removeLinks($content)
+	{
+		$content = preg_replace(array('{<a[^>]*><img}','{/></a>}'), array('<img','/>'), $content);
+		return $content;
+	}
+	
 	function get_attachment_id_from_url($attachment_url = ''){
 
 		global $wpdb;
