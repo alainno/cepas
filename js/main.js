@@ -36,6 +36,8 @@ function main(){
 	/* Tienda - Catalogo */
 	$(".imgs-children ul li a").click(cambiarImagen);
         $(".imgs-children ul li a").first().addClass('actual');
+        
+        //$('.wpcf7-date').datepicker();
 }
 
 function cambiarImagen()
