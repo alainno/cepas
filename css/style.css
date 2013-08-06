@@ -266,3 +266,5 @@ article table tr th
 article table tr th{background: #BB6C00; color: #FFE5C9}
 article table tr td{color: #2d2d2d;}
 article td ul{margin: 0}
+
+.google-map-placeholder{border: none !important;}
