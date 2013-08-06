@@ -45,7 +45,7 @@ function main(){
                         dateFormat: 'dd/mm/yy', 
                         monthNamesShort: months
                     };
-        $('.wpcf7-text').datepicker(conf);
+        $('form .input-fecha').datepicker(conf);
 }
 
 function cambiarImagen()
