@@ -1,4 +1,6 @@
 <?php
+
+die('Header');
 //$menu = array(
 //	'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
 //	,'Nuestra Institución' => array('id'=>12,'tipo'=>'pagina')
