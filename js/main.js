@@ -37,7 +37,15 @@ function main(){
 	$(".imgs-children ul li a").click(cambiarImagen);
         $(".imgs-children ul li a").first().addClass('actual');
         
-        $('form .input-fecha').datepicker({changeYear:true,changeMonth:true,yearRange:'c-150:c'});
+        var months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+        var conf =  {
+                        changeYear:true, 
+                        changeMonth:true, 
+                        yearRange:'c-150:c', 
+                        dateFormat: 'dd/mm/yy', 
+                        monthNamesShort: months
+                    };
+        $('.wpcf7-text').datepicker(conf);
 }
 
 function cambiarImagen()
