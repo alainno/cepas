@@ -5,7 +5,7 @@ get_header();
 	<div id="slider">
 		<?php
 			$recent_slides = wp_get_recent_posts(array(
-				'numberposts' => 5
+				'numberposts' => 6
 				,'category' => CATE_SLIDES
 				,'order' => 'ASC'
 			));
