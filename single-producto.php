@@ -16,8 +16,8 @@ get_header();
 //                                                var_dump($_precio);
 //                                                die();
                     
-                    /*$precio = $_campos["Precio"][0];
-                    $material = $_campos["Material"][0];
+                    $precio = $_campos["Precio"][0];
+                    /*$material = $_campos["Material"][0];
                     $artesano = $_campos["Artesano"][0];
                     $disponibilidad = $_campos["Disponibilidad"][0];
                     $procedencia = $_campos["Procedencia"][0];*/
