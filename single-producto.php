@@ -32,7 +32,7 @@ get_header();
                     <h2>
                         <?php the_title(); ?>
                         <?php if (!empty($precio) && is_numeric($precio)): ?>
-                            <img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="142" height="25" />
+                            <img id="etiq" src="<?php echo get_template_directory_uri(); ?>/img/img-etiqueta.png" class="" width="128" height="29" />
                             <p class="precio">S/. <?php echo number_format($precio, 2); ?></p>
                         <? endif; ?>
                     </h2>
